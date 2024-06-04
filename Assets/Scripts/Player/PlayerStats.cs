@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float maxHealth;
     float currentHealt;
     [SerializeField] float maxShield;
-    float cuerrentShield;
+    float currentShield;
     [SerializeField] float speed;
     float speedBooster;
     [SerializeField] float jumpForce;
@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         currentHealt = maxHealth;
-        cuerrentShield = maxShield;
+        currentShield = maxShield;
     }
     #endregion
 
@@ -40,12 +40,25 @@ public class PlayerStats : MonoBehaviour
     public float Healt
     {
         get { return currentHealt; }
-        set { currentHealt = currentHealt + value > maxHealth ? currentHealt + value : maxHealth; } 
+        set 
+        { 
+            currentHealt = currentHealt + value < maxHealth ? currentHealt + value : maxHealth;
+            if(currentHealt < 0)
+            {
+                //TODO play death animation
+            }
+        } 
     }
     public float Shield
     {
-        get { return cuerrentShield; }
-        set { cuerrentShield = cuerrentShield + value > maxShield ? cuerrentShield + value : maxShield; }
+        get { return currentShield; }
+        set 
+        { 
+            currentShield = value > 0 ? 
+                //If it's a heal
+                currentShield + value < maxShield ? currentShield + value : maxShield 
+                //If its's damage
+                : ShieldDamage(value); }
     }
     public void SpeedBoost(float multiplier, float duration)
     {
@@ -58,6 +71,15 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         speedBooster = 0;
+    }
+    private float ShieldDamage(float damage)
+    {
+        if (damage > currentShield)
+        {
+            currentHealt += damage+currentShield;
+            return 0;
+        }
+        return damage; 
     }
     #endregion
 }
