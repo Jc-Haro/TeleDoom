@@ -10,7 +10,13 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float animationDeadTime;
+    [SerializeField] private GameObject target;
 
+    // get the target
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+    }
     //region created for return all base and necessary valeus
     #region ReturnValeus
     // this funcion return the speed
@@ -29,6 +35,10 @@ public class EnemyStats : MonoBehaviour
         return life;
     }
 
+    public GameObject Target()
+    {
+        return target;
+    }
     #endregion
 
     #region DamageAndDead
