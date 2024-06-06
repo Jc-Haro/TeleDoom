@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float animationDeadTime;
+    [SerializeField] private int followingDistance;
     [SerializeField] private GameObject target;
 
     // get the target
@@ -34,11 +35,17 @@ public class EnemyStats : MonoBehaviour
     {
         return life;
     }
-
+    // this funcion will return the following ditance
+    public int FollowingDistance()
+    {
+        return followingDistance;
+    }
+    // this funcion whill return the target
     public GameObject Target()
     {
         return target;
     }
+    
     #endregion
 
     #region DamageAndDead

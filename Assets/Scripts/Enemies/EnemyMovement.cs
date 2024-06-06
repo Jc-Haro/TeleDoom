@@ -11,7 +11,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private int followingDistance;
     [SerializeField] private float speed;
     [SerializeField] private bool hasTarget = false;
-
+    [SerializeField] private float indexTime;
+    [SerializeField] private float mindcooldown;
+    public int randomDesicion, grade;
+    public Quaternion angle;
     private void Start()
     {
         if (ES.Target() != null)
@@ -20,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
             hasTarget = true;
         }
         speed = ES.Speed();
+        followingDistance = ES.FollowingDistance();
 
     }
 
@@ -43,21 +47,44 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.transform.position) < followingDistance)
         {
-            Debug.Log("hay target y se esta a distancia de seguimiento");
             Following();
         }
         else
         {
-            Debug.Log("hay target pero esta muy lejos");
+            RandomMove();
         }
     }
     private void Following()
     {
-        var lookPose = target.transform.position - transform.position;
+        Vector3 lookPose = target.transform.position - transform.position;
         lookPose.y = 0;
-        var rotation = Quaternion.LookRotation(lookPose);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 0);
+        Quaternion rotation = Quaternion.LookRotation(lookPose);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
-
+    private void RandomMove()
+    {
+        if(indexTime > mindcooldown)
+        {
+            randomDesicion = Random.Range(0,2);
+            switch(randomDesicion)
+            {
+                //In this case the enemy whill stay quiet
+                case 0:
+                    break;
+                // in this case the enemy will walk in a random direction
+                case 1:
+                    Debug.Log("case1");
+                    grade = Random.Range(0, 360);
+                    angle = Quaternion.Euler(0, grade, 0);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 1);
+                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                    break;
+                default:
+                    break;
+            }
+            indexTime = 0;
+        }
+        indexTime += Time.deltaTime;
+    }
 }
