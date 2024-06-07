@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -64,26 +62,30 @@ public class EnemyMovement : MonoBehaviour
     }
     private void RandomMove()
     {
-        if(indexTime > mindcooldown)
+        if(indexTime >= mindcooldown)
         {
             randomDesicion = Random.Range(0,2);
-            switch(randomDesicion)
-            {
-                //In this case the enemy whill stay quiet
-                case 0:
-                    break;
-                // in this case the enemy will walk in a random direction
-                case 1:
-                    Debug.Log("case1");
-                    grade = Random.Range(0, 360);
-                    angle = Quaternion.Euler(0, grade, 0);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 1);
-                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                    break;
-                default:
-                    break;
-            }
             indexTime = 0;
+        }
+        switch (randomDesicion)
+        {
+            //In this case the enemy whill stay quiet
+            case 0:
+
+                break;
+            // in this case the enemy will walk in a random direction
+            case 1:
+                Debug.Log("case1");
+                grade = Random.Range(0, 360);
+                angle = Quaternion.Euler(0, grade, 0);
+                randomDesicion++;
+                break;
+            case 2:
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 2);
+                transform.Translate(Vector3.forward * (.5f *speed) * Time.deltaTime);
+                break;
+            default:
+                break;
         }
         indexTime += Time.deltaTime;
     }
