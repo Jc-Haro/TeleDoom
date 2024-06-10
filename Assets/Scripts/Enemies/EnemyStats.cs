@@ -30,9 +30,16 @@ public class EnemyStats : MonoBehaviour
         return damage;
     }
     // this funcion return the life
-    public float Life()
+    public float Life
     {
-        return life;
+        get 
+        { 
+            return life; 
+        }
+        set
+        {
+            TakeDamage(value);
+        }
     }
     // this funcion will return the following ditance
     public int FollowingDistance()
