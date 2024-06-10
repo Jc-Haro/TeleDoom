@@ -75,7 +75,6 @@ public class EnemyMovement : MonoBehaviour
                 break;
             // in this case the enemy will walk in a random direction
             case 1:
-                Debug.Log("case1");
                 grade = Random.Range(0, 360);
                 angle = Quaternion.Euler(0, grade, 0);
                 randomDesicion++;
