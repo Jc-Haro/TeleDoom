@@ -27,7 +27,9 @@ public class TeleportGranade : MonoBehaviour
 
     private void TPPlayer()
     {
+        PlayerStats.instance.gameObject.SetActive(false);
         PlayerStats.instance.gameObject.transform.position = this.gameObject.transform.position;
+        PlayerStats.instance.gameObject.SetActive(true);
         Destroy(gameObject);
     }
 }
