@@ -13,9 +13,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
+    // We get the camera's transform component
+    private Transform cameraTransform; 
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        // Find the main camera
+        cameraTransform = Camera.main.transform;
         //The player can move while in the air, but not as fast as when he is in the ground
         airSpeed = speed / 2;
     }
@@ -29,9 +34,21 @@ public class PlayerMovement : MonoBehaviour
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
 
-            //We create a new vector based on the input of the player and assign it to the direction of the player
-            moveDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            moveDirection = transform.TransformDirection(moveDirection);
+            //We create a new vector based on the input of the player
+            Vector3 inputDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+            // Calculate the camera relative direction to move:
+            Vector3 forward = cameraTransform.forward;
+            Vector3 right = cameraTransform.right;
+
+            // Keep the forward and right vectors horizontal
+            forward.y = 0f;
+            right.y = 0f;
+            forward.Normalize();
+            right.Normalize();
+
+            // Calculate the direction relative to the camera
+            moveDirection = forward * inputDirection.z + right * inputDirection.x;
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))
@@ -40,14 +57,23 @@ public class PlayerMovement : MonoBehaviour
                 moveDirection.y = jumpForce;
             }
         }
-        // air movment (basically same shit different speed)
+        // air movement
         else
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
 
-            Vector3 airMove = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            airMove = transform.TransformDirection(airMove);
+            Vector3 inputDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+            Vector3 forward = cameraTransform.forward;
+            Vector3 right = cameraTransform.right;
+
+            forward.y = 0f;
+            right.y = 0f;
+            forward.Normalize();
+            right.Normalize();
+
+            Vector3 airMove = forward * inputDirection.z + right * inputDirection.x;
             airMove *= airSpeed;
 
             //We apply the air move to the moveDirection
