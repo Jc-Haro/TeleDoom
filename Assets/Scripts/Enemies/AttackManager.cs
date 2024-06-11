@@ -11,18 +11,30 @@ public class AttackManager : MonoBehaviour
         {
             if (!ES.IsDead)
             {
+                Debug.Log("c pego");
                 //deal damage
                 EM.Attack();
             }
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (!ES.IsDead)
+            {
+                Debug.Log("ist attacking");
+            }
+        }
 
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             if (!ES.IsDead)
             {
+                Debug.Log("corrio");
                 // stop atacking
                 EM.Attack();
             }

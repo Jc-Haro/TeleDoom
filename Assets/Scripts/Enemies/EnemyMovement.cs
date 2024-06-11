@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -16,8 +17,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float mindcooldown;
 
     // private variables for moving manage
-    private int randomDesicion, grade;
+    private int  grade,randomDesicion;
     private Quaternion angle, rotation;
+    [SerializeField] private NavMeshAgent NMAgent;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
         }
         speed = ES.Speed;
         followingDistance = ES.FollowingDistance();
-
+        NMAgent.enabled = false;
     }
 
     private void Update()
@@ -51,44 +53,42 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.transform.position) < followingDistance)
         {
-            // cansel animation of run
             // animator.SetBool("run", false);
             Vector3 lookPose = target.transform.position - transform.position;
             lookPose.y = 0;
             rotation = Quaternion.LookRotation(lookPose);
+            NMAgent.enabled = true;
+            NMAgent.SetDestination(target.transform.position);
+
             //if is attacking will dont move
             if (!isAttacking)
             {
-                Following();
-            }
 
+                // animator.SetBool("Walk",false);
+                // animator.SetBool("run", true);
+            }
         }
         else
         {
+            Debug.Log("no esta en rango");
+            NMAgent.enabled = false;
             RandomMove();
         }
     }
-    private void Following()
-    {
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
-        // animator.SetBool("Walk",false);
-        // animator.SetBool("run", true);
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
     private void RandomMove()
     {
-        if(indexTime >= mindcooldown)
+        Debug.Log("random move");
+        if (indexTime >= mindcooldown)
         {
             randomDesicion = Random.Range(0,2);
             indexTime = 0;
         }
         switch (randomDesicion)
         {
-            //In this case the enemy whill stay quiet
+
             case 0:
-                // call animator for stop walk and call idle
                 // animator.SetBool("Walk",false);
+                // animator.SetBool("run", false);
                 break;
             // in this case the enemy will walk in a random direction
             case 1:
@@ -97,10 +97,11 @@ public class EnemyMovement : MonoBehaviour
                 randomDesicion++;
                 break;
             case 2:
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 2);
-                transform.Translate(Vector3.forward * (.5f *speed) * Time.deltaTime);
                 // cal animation of walk 
                 // animator.SetBool("Walk",true);
+                // animator.SetBool("run", false);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 2);
+                transform.Translate(Vector3.forward * (.5f *speed) * Time.deltaTime);
                 break;
             default:
                 break;
