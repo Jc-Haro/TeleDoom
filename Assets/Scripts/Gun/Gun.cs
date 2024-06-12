@@ -9,39 +9,40 @@ public class Gun : MonoBehaviour
     public float fireRate;
     public bool automatic;
     public float currentFireRate;
+
     void Start()
     {
         currentFireRate = fireRate;
     }
 
-    // Update is called once per frame
     void Update()
     {
+
         if (automatic)
         {
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("se disparo en automatico");
                 if (currentFireRate <= 0f)
                 {
                     onGunshot?.Invoke();
+                    
                     currentFireRate = fireRate;
+                    Debug.Log("se disparo en automatico");
                 }
             }
         }
         else
         {
-        
             if (Input.GetMouseButtonDown(0))
             {
-                if (currentFireRate <= 0f)                
-                {                
-                    onGunshot?.Invoke();                    
-                    currentFireRate = fireRate;                    
+                if (currentFireRate <= 0f)
+                {
+                    onGunshot?.Invoke();
+                    currentFireRate = fireRate;
                     Debug.Log("se disparo semiautomatico");
                 }
             }
-        }    
+        }
         currentFireRate -= Time.deltaTime;
     }
 }
