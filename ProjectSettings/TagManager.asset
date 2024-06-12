@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Map
+  - Tp
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Wall
+  - EdgeClimbLayer
   - 
   - 
   - 

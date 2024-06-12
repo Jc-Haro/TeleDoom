@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 308182163300643414}
   - component: {fileID: 4436349886437588128}
   - component: {fileID: 4431595598213768001}
+  - component: {fileID: 8764126359120856420}
   m_Layer: 0
   m_Name: Playerprefab
   m_TagString: Player
@@ -129,6 +130,19 @@ MonoBehaviour:
   damage: 15
   timeAirLimit: 1
   player: {fileID: 2057472092329670922}
+--- !u!114 &8764126359120856420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399436109876687049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9561c2a6474de2146963c524244e6b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 3765879366310149980}
 --- !u!1 &885936797434912191
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +385,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2

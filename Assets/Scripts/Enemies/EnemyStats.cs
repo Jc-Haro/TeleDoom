@@ -11,23 +11,32 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float animationDeadTime;
     [SerializeField] private int followingDistance;
     [SerializeField] private GameObject target;
+    [SerializeField] private bool isDead;
 
     // get the target
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        isDead = false;
     }
     //region created for return all base and necessary valeus
     #region ReturnValeus
     // this funcion return the speed
-    public float Speed()
+    public float Speed
     {
-        return speed;
+        get
+        { 
+            return speed; 
+        }
     }
     // this funcion return the damage
-    public float Damage()
+    public float Damage
     {
-        return damage;
+        get
+        {
+            return damage;
+        }
+
     }
     // this funcion return the life
     public float Life
@@ -39,6 +48,14 @@ public class EnemyStats : MonoBehaviour
         set
         {
             TakeDamage(value);
+        }
+    }
+
+    public bool IsDead
+    {
+        get 
+        { 
+            return isDead; 
         }
     }
     // this funcion will return the following ditance
