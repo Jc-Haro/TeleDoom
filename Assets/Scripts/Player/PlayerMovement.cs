@@ -14,15 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
 
     // We get the camera's transform component
-    private Transform cameraTransform;
-
-    //Coyote time 
-    [SerializeField]float coyoteTime;
-    float coyoteTimeCounter;
-
-    //Jump buffer
-    [SerializeField] float jumpBuffer;
-    float jumpBufferCounter;
+    private Transform cameraTransform; 
 
     void Start()
     {
@@ -30,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         // Find the main camera
         cameraTransform = Camera.main.transform;
         //The player can move while in the air, but not as fast as when he is in the ground
+        airSpeed = speed / 2;
     }
 
     void Update()
@@ -58,7 +51,11 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = forward * inputDirection.z + right * inputDirection.x;
             moveDirection *= speed;
 
-            coyoteTimeCounter = coyoteTime;
+            if (Input.GetButton("Jump"))
+            {
+                //We apply the jump force to the y axis
+                moveDirection.y = jumpForce;
+            }
         }
         // air movement
         else
@@ -85,31 +82,9 @@ public class PlayerMovement : MonoBehaviour
 
             // We apply gravity, almost the opposite of the jump
             moveDirection.y -= gravity * Time.deltaTime;
-
-            coyoteTimeCounter -= Time.deltaTime;
         }
-
-        if (Input.GetButton("Jump"))
-        {
-            jumpBufferCounter = jumpBuffer;
-        }
-        else
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
-
-        if (jumpBufferCounter>0 && coyoteTimeCounter>0.0f)
-        {
-            //We apply the jump force to the y axis
-            moveDirection.y = jumpForce;
-            coyoteTimeCounter = 0;
-            jumpBufferCounter = 0;
-        }
-
 
         // We use the move method of the controller so it actually does move
         controller.Move(moveDirection * Time.deltaTime);
-
-
     }
 }
