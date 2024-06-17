@@ -4832,29 +4832,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 308182163300643414, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: airSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 308182163300643414, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: coyoteTime
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 308182163300643414, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: jumpBuffer
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_Name
       value: Playerprefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3765879366310149980, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: field of view
-      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4150455290640710015, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_LocalPosition.x
