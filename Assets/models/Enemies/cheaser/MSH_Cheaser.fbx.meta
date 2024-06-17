@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 9ca612b8c97cfad4590c56e0064679e6
+guid: bccfe18eebf9bd7409437e68369aa50c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_enemy_ML
+    second: {fileID: 2100000, guid: d6a0838e41e3f864c93bee75bb1bee2e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -99,7 +104,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
