@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
 
         if (automatic)
         {
-            if (Input.GetMouseButton(0))
+            if (InputManager.instance.Shoot)
             {
                 if (currentFireRate <= 0f)
                 {
