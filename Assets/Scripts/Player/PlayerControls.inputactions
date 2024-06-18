@@ -24,18 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
+                    "name": "JumpMantle",
                     "type": "Button",
                     "id": "f630e9e9-0761-4c90-9135-c6bfd89e445c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Mantle",
-                    "type": "Button",
-                    "id": "3cdc7e8b-1d4a-4c2a-b26e-6a7f90dd8250",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -54,6 +45,15 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "d79b0eae-a5d2-4deb-a0a2-b8ef4d75d745",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "9349be0e-13a9-4071-b595-866b2797c860",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -178,7 +178,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoardControlScheme",
-                    "action": "Jump",
+                    "action": "JumpMantle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -189,29 +189,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "ControlScheme",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "24f880d2-7dec-4dbd-9235-fe0028747573",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyBoardControlScheme",
-                    "action": "Mantle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8bc52b29-d1f7-4337-8030-42f1dbea1799",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "ControlScheme",
-                    "action": "Mantle",
+                    "action": "JumpMantle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -368,6 +346,28 @@
                     "action": "Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4fe6e3d0-195b-4728-aa50-008f529d664c",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba491f3f-9f3f-4828-85b5-419345ef3ed8",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -28,7 +28,7 @@ public class EdgeClimb : MonoBehaviour
 
     private void Vault()
     {
-        if(InputManager.instance.Mantle)
+        if(InputManager.instance.JumpMantle)
         {
             mantleBufferCounter = mantleBufferTime;
             // Creates a raycast forward from the camera position, with a distance of 1, checking if it hits EdgeClimgLayer and storing the value in firstHit
