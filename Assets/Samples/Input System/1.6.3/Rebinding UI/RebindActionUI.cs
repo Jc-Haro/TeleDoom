@@ -344,8 +344,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindOverlay?.SetActive(true);
             if (m_RebindText != null)
             {
+                string display = m_RebindOperation.expectedControlType == "Vector2" ? "stick" : m_RebindOperation.expectedControlType;
                 var text = !string.IsNullOrEmpty(m_RebindOperation.expectedControlType)
-                    ? $"{partName}Waiting for {m_RebindOperation.expectedControlType} input..."
+                    ? $"{partName}Waiting for {display} input..."
                     : $"{partName}Waiting for input...";
                 m_RebindText.text = text;
             }
@@ -373,7 +374,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 }
                 if(binding.effectivePath == newBinding.effectivePath)
                 {
-                    Debug.Log("Dupicate binding");
+                    m_InputInUse.text = "Binding already in use, pick a diferent one";
                     return true;
                 }
             }
@@ -383,11 +384,13 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 {
                     if (action.bindings[i].effectivePath == newBinding.overridePath)
                     {
-                        Debug.Log("Dupicate binding");
+                        m_InputInUse.text = "Binding already in use, pick a diferent one";
                         return true;
                     }
                 }
             }
+
+            m_InputInUse.text = "";
 
             return false;
         }
@@ -467,6 +470,10 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         [Tooltip("Optional text label that will be updated with prompt for user input.")]
         [SerializeField]
         private TMPro.TextMeshProUGUI m_RebindText;
+
+        [Tooltip("Shows if the inputs is already in use")]
+        [SerializeField]
+        private TMPro.TextMeshProUGUI m_InputInUse;
 
         [Tooltip("Optional bool that allows you to OVERRIDE action label with your own label")]
         [SerializeField]

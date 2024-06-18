@@ -15,6 +15,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     {
         public GamepadIcons xbox;
         public GamepadIcons ps4;
+        public GamepadIcons basicGamepad;
 
         protected void OnEnable()
         {
@@ -37,6 +38,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 icon = ps4.GetSprite(controlPath);
             else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "Gamepad"))
                 icon = xbox.GetSprite(controlPath);
+            else
+                icon = basicGamepad.GetSprite(controlPath);
+
 
             var textComponent = component.bindingText;
 
