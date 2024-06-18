@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (InputManager.instance.Jump)
+        if (InputManager.instance.JumpMantle)
         {
             jumpBufferCounter = jumpBuffer;
         }
