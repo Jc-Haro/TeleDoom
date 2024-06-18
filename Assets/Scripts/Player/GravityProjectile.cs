@@ -38,7 +38,7 @@ public class GravityProjectile : MonoBehaviour
 
     private bool IsGrandeReady()
     {
-        return Input.GetMouseButtonDown(1) && isReady && GameObject.FindGameObjectsWithTag("Tp").Length == 0;
+        return InputManager.instance.ShootReactivateTP && isReady && GameObject.FindGameObjectsWithTag("Tp").Length == 0;
     }
 
     private void Shoot()

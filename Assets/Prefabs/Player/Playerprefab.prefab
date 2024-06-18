@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 399436109876687049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37f52f49c5c8354c9f2255a3d940f6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a909d4df07685e468c24223474d2990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
@@ -244,7 +244,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -609,7 +609,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8728137904967177803}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

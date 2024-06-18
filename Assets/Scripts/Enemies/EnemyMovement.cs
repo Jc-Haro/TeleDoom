@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     private int  grade,randomDesicion;
     private Quaternion angle, rotation;
     [SerializeField] private NavMeshAgent NMAgent;
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
@@ -53,20 +54,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.transform.position) < followingDistance)
         {
-            // animator.SetBool("run", false);
+            animator.SetInteger("Animation",2);
             Vector3 lookPose = target.transform.position - transform.position;
             lookPose.y = 0;
             rotation = Quaternion.LookRotation(lookPose);
             NMAgent.enabled = true;
             NMAgent.SetDestination(target.transform.position);
 
-            //if is attacking will dont move
-            if (!isAttacking)
-            {
-
-                // animator.SetBool("Walk",false);
-                // animator.SetBool("run", true);
-            }
         }
         else
         {
@@ -87,8 +81,7 @@ public class EnemyMovement : MonoBehaviour
         {
 
             case 0:
-                // animator.SetBool("Walk",false);
-                // animator.SetBool("run", false);
+                animator.SetInteger("Animation", 0);
                 break;
             // in this case the enemy will walk in a random direction
             case 1:
@@ -97,9 +90,7 @@ public class EnemyMovement : MonoBehaviour
                 randomDesicion++;
                 break;
             case 2:
-                // cal animation of walk 
-                // animator.SetBool("Walk",true);
-                // animator.SetBool("run", false);
+                animator.SetInteger("Animation", 1);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 2);
                 transform.Translate(Vector3.forward * (.5f *speed) * Time.deltaTime);
                 break;
