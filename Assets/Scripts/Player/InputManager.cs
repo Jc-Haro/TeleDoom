@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour
 
         movement = playerInput.actions["Movement"];
         cameraMovement = playerInput.actions["Camera"];
-        jumpMante = playerInput.actions["Jump"];
+        jumpMante = playerInput.actions["JumpMantle"];
         shootreactivateTP = playerInput.actions["ShootReactivateTP"];
         shoot = playerInput.actions["Shoot"];
     }
@@ -47,6 +47,6 @@ public class InputManager : MonoBehaviour
         Camera = cameraMovement.ReadValue<Vector2>();
         JumpMantle = jumpMante.WasPressedThisFrame();
         ShootReactivateTP = shootreactivateTP.WasPressedThisFrame();
-        Shoot = shoot.WasPressedThisFrame();
+        Shoot = shoot.IsPressed();
     }
 }
