@@ -11,16 +11,14 @@ public class InputManager : MonoBehaviour
     //Inputs codes
     public Vector2 Movement { get; private set; }
     public Vector2 Camera { get; private set; }
-    public bool Jump { get; private set; }
-    public bool Mantle { get; private set; }
+    public bool JumpMantle { get; private set; }
     public bool ShootReactivateTP { get; private set; }
     public bool Shoot { get; private set; }
 
     //Input actions
     private InputAction movement;
     private InputAction cameraMovement;
-    private InputAction jump;
-    private InputAction mantle;
+    private InputAction jumpMante;
     private InputAction shootreactivateTP;
     private InputAction shoot;
 
@@ -39,8 +37,7 @@ public class InputManager : MonoBehaviour
 
         movement = playerInput.actions["Movement"];
         cameraMovement = playerInput.actions["Camera"];
-        jump = playerInput.actions["Jump"];
-        mantle = playerInput.actions["Mantle"];
+        jumpMante = playerInput.actions["Jump"];
         shootreactivateTP = playerInput.actions["ShootReactivateTP"];
         shoot = playerInput.actions["Shoot"];
     }
@@ -48,8 +45,7 @@ public class InputManager : MonoBehaviour
     {
         Movement = movement.ReadValue<Vector2>();    
         Camera = cameraMovement.ReadValue<Vector2>();
-        Jump = jump.WasPressedThisFrame();
-        Mantle = mantle.WasPressedThisFrame();
+        JumpMantle = jumpMante.WasPressedThisFrame();
         ShootReactivateTP = shootreactivateTP.WasPressedThisFrame();
         Shoot = shoot.WasPressedThisFrame();
     }
