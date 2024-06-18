@@ -19,7 +19,7 @@ public class TeleportGranade : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (InputManager.instance.ShootReactivateTP)
         {
             TPPlayer();
         }

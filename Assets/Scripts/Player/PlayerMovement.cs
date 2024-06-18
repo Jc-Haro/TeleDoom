@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform cameraTransform;
 
     //Coyote time 
-    [SerializeField]float coyoteTime;
+    [SerializeField] float coyoteTime;
     float coyoteTimeCounter;
 
     //Jump buffer
@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             //We get the input from both axises
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+            float moveHorizontal = InputManager.instance.Movement.x;
+            float moveVertical = InputManager.instance.Movement.y;
 
             //We create a new vector based on the input of the player
             Vector3 inputDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
@@ -63,8 +63,8 @@ public class PlayerMovement : MonoBehaviour
         // air movement
         else
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+            float moveHorizontal = InputManager.instance.Movement.x;
+            float moveVertical = InputManager.instance.Movement.y;
 
             Vector3 inputDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButton("Jump"))
+        if (InputManager.instance.Jump)
         {
             jumpBufferCounter = jumpBuffer;
         }
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
 
-        if (jumpBufferCounter>0 && coyoteTimeCounter>0.0f)
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0.0f)
         {
             //We apply the jump force to the y axis
             moveDirection.y = jumpForce;

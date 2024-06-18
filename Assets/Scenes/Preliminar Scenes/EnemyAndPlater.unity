@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4832,6 +4832,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 308182163300643414, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: airSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 308182163300643414, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: coyoteTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 308182163300643414, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: jumpBuffer
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_Name
       value: Playerprefab
@@ -4879,7 +4891,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1746356659}
+    - targetCorrespondingSourceObject: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1746356660}
   m_SourcePrefab: {fileID: 100100000, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
 --- !u!1 &1307508071
 GameObject:
@@ -7222,6 +7240,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742118122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1746356651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+  m_PrefabInstance: {fileID: 1212473261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1746356659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746356651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c36c193e40823b4895ae7f9e7f5b090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1746356660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746356651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 445c46474ed1d3f4791d7224f19f5b35, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: InGame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1764446087
 GameObject:
   m_ObjectHideFlags: 0
