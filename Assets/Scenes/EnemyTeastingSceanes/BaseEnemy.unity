@@ -1192,16 +1192,28 @@ PrefabInstance:
       value: Cheaser
       objectReference: {fileID: 0}
     - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.129468
+      value: -0.00050641
       objectReference: {fileID: 0}
     - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.706518
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1243,6 +1255,10 @@ PrefabInstance:
       propertyPath: NMAgent
       value: 
       objectReference: {fileID: 1597667333}
+    - target: {fileID: 2344098495650484274, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1975668294}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1674,6 +1690,11 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: fa6cf4544a3af60449605e48d55534bf, type: 2}
   m_BuildHeightMesh: 0
+--- !u!95 &1975668294 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6728965759775530725, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+  m_PrefabInstance: {fileID: 1597667330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005034924
 GameObject:
   m_ObjectHideFlags: 0
