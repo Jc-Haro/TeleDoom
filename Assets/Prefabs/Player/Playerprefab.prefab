@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4436349886437588128}
   - component: {fileID: 4431595598213768001}
   - component: {fileID: 8764126359120856420}
+  - component: {fileID: 4105252013274409910}
+  - component: {fileID: 5741807903427906865}
   m_Layer: 0
   m_Name: Playerprefab
   m_TagString: Player
@@ -92,13 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 399436109876687049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37f52f49c5c8354c9f2255a3d940f6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a909d4df07685e468c24223474d2990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
   jumpForce: 13
   gravity: 23
-  airSpeed: 0
+  airSpeed: 15
+  coyoteTime: 0.35
+  jumpBuffer: 0.35
 --- !u!114 &4436349886437588128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +147,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 3765879366310149980}
+  mantleBufferTime: 0
+--- !u!114 &4105252013274409910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399436109876687049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c36c193e40823b4895ae7f9e7f5b090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5741807903427906865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399436109876687049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 445c46474ed1d3f4791d7224f19f5b35, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: InGame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &885936797434912191
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +291,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -609,7 +656,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8728137904967177803}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
