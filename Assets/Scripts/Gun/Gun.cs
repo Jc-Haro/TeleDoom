@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         currentFireRate = fireRate;
+        
     }
 
     void Update()
