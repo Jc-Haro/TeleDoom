@@ -1983,20 +1983,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
-      propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_AngularSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
-      propertyPath: m_WalkableMask
-      value: 4294967295
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3780,10 +3772,10 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.13333334
+  m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 7f328b59d1ec1ee4a907cbf4cd4fe201, type: 2}
-  m_BuildHeightMesh: 0
+  m_BuildHeightMesh: 1
 --- !u!1 &969542789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6788,6 +6780,34 @@ PrefabInstance:
     - target: {fileID: 829289467466613919, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027501972370050795, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027501972370050795, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611884706093573417, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: life
+      value: 1e+13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_Speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_Acceleration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388087010345445479, guid: d54b9e0d9a8ecbd49ad5ce79ca447f07, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
