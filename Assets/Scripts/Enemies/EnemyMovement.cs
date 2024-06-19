@@ -37,6 +37,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+
         if (hasTarget)
         {
             IA();
@@ -56,17 +57,27 @@ public class EnemyMovement : MonoBehaviour
 
     private void IA()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) < followingDistance)
+        Vector3 lookPose = target.transform.position - transform.position;
+        lookPose.y = 0;
+        rotation = Quaternion.LookRotation(lookPose);
+        if (Vector3.Distance(transform.position, target.transform.position) < followingDistance && Vector3.Distance(transform.position, transform.forward) > 2)
         {
-
-            animator.SetInteger("Animation",2);
-            NMAgent.enabled = true;
-            NMAgent.SetDestination(target.transform.position);
+            if (Vector3.Distance(transform.position, transform.forward) < 2)
+            {
+                NMAgent.enabled = false;
+                lookPose.y = 0;
+                rotation = Quaternion.LookRotation(lookPose);
+            }
+            else
+            {
+                animator.SetInteger("Animation", 2);
+                NMAgent.enabled = true;
+                NMAgent.SetDestination(target.transform.position);
+            }
         }
         else
         {
             Debug.Log("no esta en rango");
-            NMAgent.enabled = false;
             RandomMove();
         }
     }
@@ -105,14 +116,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if(isAttacking)
         {
-            //animator.SetBool("attack",false);
             isAttacking = false;
         }
         else
         {
-            //animator.SetBool("walk",false);
-            //animator.SetBool("run",false);
-            //animator.SetBool("attack",true);  
             isAttacking = true;
         }
     }
