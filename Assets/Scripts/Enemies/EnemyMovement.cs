@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
         {
             target = ES.Target();
             hasTarget = true;
+            NMAgent.SetDestination(target.transform.position);
         }
         speed = ES.Speed;
         followingDistance = ES.FollowingDistance();
@@ -44,8 +45,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (ES.Target() != null)
             {
+                NMAgent.enabled = true;
                 target = ES.Target();
                 hasTarget = true;
+                NMAgent.SetDestination(target.transform.position);
+                NMAgent.enabled = false;
             }
         }
     }
@@ -54,13 +58,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.transform.position) < followingDistance)
         {
+
             animator.SetInteger("Animation",2);
-            Vector3 lookPose = target.transform.position - transform.position;
-            lookPose.y = 0;
-            rotation = Quaternion.LookRotation(lookPose);
             NMAgent.enabled = true;
             NMAgent.SetDestination(target.transform.position);
-
         }
         else
         {
