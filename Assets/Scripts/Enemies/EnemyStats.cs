@@ -39,6 +39,14 @@ public class EnemyStats : MonoBehaviour
         }
 
     }
+
+    public float AttackSpeed
+    {
+        get
+        {
+            return attackSpeed;
+        }
+    }
     // this funcion return the life
     public float Life
     {

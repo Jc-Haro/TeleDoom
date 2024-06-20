@@ -1,5 +1,3 @@
-using System.Drawing;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,19 +11,28 @@ public class EnemyMovement : MonoBehaviour
     // scripts variables
     [SerializeField] private GameObject target;
     [SerializeField] private int followingDistance;
+    [SerializeField] private float actualDistance;
     [SerializeField] private float speed;
     [SerializeField] private bool hasTarget = false;
     [SerializeField] private float indexTime;
     [SerializeField] private float mindcooldown;
+    RigidbodyConstraints originalConstrain;
 
     // private variables for moving manage
     private int grade, randomDesicion;
     private Quaternion angle, rotation;
     [SerializeField] private NavMeshAgent NMAgent;
     public Animator animator;
+    public Rigidbody rb;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        originalConstrain = rb.constraints;
+    }
     private void Start()
     {
+
         if (ES.Target() != null)
         {
             target = ES.Target();
@@ -39,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-
+        actualDistance = Vector3.Distance(transform.position, target.transform.position);
         if (hasTarget)
         {
             IA();
@@ -55,28 +62,34 @@ public class EnemyMovement : MonoBehaviour
                 NMAgent.enabled = false;
             }
         }
-
     }
 
     private void IA()
     {
-        if(Vector3.Distance(transform.position,target.transform.position) < followingDistance)
+        if( actualDistance < followingDistance)
         {
             Vector3 lookPose = target.transform.position - transform.position;
             lookPose.y = 0;
             rotation = Quaternion.LookRotation(lookPose);
             if (!ES.IsAttacking)
             {
-                if(Vector3.Distance(transform.position, target.transform.position) > 2)
+                if(actualDistance >= 1.75f)
+                {   
+                        animator.SetInteger("Animation", 2);
+                        NMAgent.enabled = true;
+                        NMAgent.SetDestination(target.transform.position);
+
+                }
+                else
                 {
-                    animator.SetInteger("Animation", 2);
-                    NMAgent.enabled = true;
-                    NMAgent.SetDestination(target.transform.position);
+                    animator.SetInteger("Animation", 0);
+                    NMAgent.enabled = false;
                 }
             }
             else
-            {
-                NMAgent.enabled = false;
+            {  
+                    NMAgent.enabled = false;
+                    rb.constraints = RigidbodyConstraints.FreezePositionY;
             }
         }
         else
@@ -120,8 +133,16 @@ public class EnemyMovement : MonoBehaviour
 
     public void Attack()
     {
-        ES.IsAttacking = false;
-        animator.SetInteger("Animation", 0);
         PlayerStats.instance.Shield = ES.Damage;
+        RestartConstrains();
+    }
+
+    public void RestartConstrains()
+    {
+        rb.constraints = originalConstrain;
+    }
+    public void NavChange(bool valeu)
+    {
+        NMAgent.enabled = valeu;
     }
 }

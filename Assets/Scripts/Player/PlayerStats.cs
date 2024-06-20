@@ -52,13 +52,17 @@ public class PlayerStats : MonoBehaviour
     public float Shield
     {
         get { return currentShield; }
-        set 
-        { 
-            currentShield = value > 0 ? 
+        set
+        {
+            currentShield = value > 0 ?
                 //If it's a heal
-                currentShield + value < maxShield ? currentShield + value : maxShield 
+                currentShield + value < maxShield ? currentShield + value : maxShield
                 //If its's damage
-                : ShieldDamage(value); }
+                : ShieldDamage(value);
+            Debug.Log(currentHealt);
+            Debug.Log(currentShield);
+        }
+            
     }
     public void SpeedBoost(float multiplier, float duration)
     {
