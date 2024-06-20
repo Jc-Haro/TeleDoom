@@ -1,3 +1,5 @@
+using System.Drawing;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,15 +14,15 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private int followingDistance;
     [SerializeField] private float speed;
-    [SerializeField] private bool hasTarget = false, isAttacking = false;
+    [SerializeField] private bool hasTarget = false;
     [SerializeField] private float indexTime;
     [SerializeField] private float mindcooldown;
 
     // private variables for moving manage
-    private int  grade,randomDesicion;
+    private int grade, randomDesicion;
     private Quaternion angle, rotation;
     [SerializeField] private NavMeshAgent NMAgent;
-    [SerializeField] private Animator animator;
+    public Animator animator;
 
     private void Start()
     {
@@ -53,32 +55,36 @@ public class EnemyMovement : MonoBehaviour
                 NMAgent.enabled = false;
             }
         }
+
     }
 
     private void IA()
     {
-        Vector3 lookPose = target.transform.position - transform.position;
-        lookPose.y = 0;
-        rotation = Quaternion.LookRotation(lookPose);
-        if (Vector3.Distance(transform.position, target.transform.position) < followingDistance && Vector3.Distance(transform.position, transform.forward) > 2)
+        if(Vector3.Distance(transform.position,target.transform.position) < followingDistance)
         {
-            if (Vector3.Distance(transform.position, transform.forward) < 2)
+            Vector3 lookPose = target.transform.position - transform.position;
+            lookPose.y = 0;
+            rotation = Quaternion.LookRotation(lookPose);
+            if (!ES.IsAttacking)
             {
-                NMAgent.enabled = false;
-                lookPose.y = 0;
-                rotation = Quaternion.LookRotation(lookPose);
+                if(Vector3.Distance(transform.position, target.transform.position) > 2)
+                {
+                    animator.SetInteger("Animation", 2);
+                    NMAgent.enabled = true;
+                    NMAgent.SetDestination(target.transform.position);
+                }
             }
             else
             {
-                animator.SetInteger("Animation", 2);
-                NMAgent.enabled = true;
-                NMAgent.SetDestination(target.transform.position);
+                NMAgent.enabled = false;
             }
         }
         else
         {
-            Debug.Log("no esta en rango");
-            RandomMove();
+            if(!ES.IsAttacking)
+            {
+                RandomMove();
+            }
         }
     }
     private void RandomMove()
@@ -114,14 +120,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("cambio de estado");
-        if(isAttacking)
-        {
-            isAttacking = false;
-        }
-        else
-        {
-            isAttacking = true;
-        }
+        ES.IsAttacking = false;
+        animator.SetInteger("Animation", 0);
+        PlayerStats.instance.Shield = ES.Damage;
     }
 }

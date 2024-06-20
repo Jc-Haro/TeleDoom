@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private int followingDistance;
     [SerializeField] private GameObject target;
     [SerializeField] private bool isDead;
+    [SerializeField] private bool isAttacking;
 
     // get the target
     private void Start()
@@ -56,6 +57,18 @@ public class EnemyStats : MonoBehaviour
         get 
         { 
             return isDead; 
+        }
+    }
+    
+    public bool IsAttacking
+    {
+        get
+        {
+            return isAttacking;
+        }
+        set
+        {
+            isAttacking = value;
         }
     }
     // this funcion will return the following ditance

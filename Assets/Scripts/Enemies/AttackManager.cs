@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackManager : MonoBehaviour
@@ -11,33 +12,28 @@ public class AttackManager : MonoBehaviour
         {
             if (!ES.IsDead)
             {
-                Debug.Log("c pego");
                 //deal damage
-                EM.Attack();
+                ES.IsAttacking = true;
+                EM.animator.SetInteger("Animation", 3);
             }
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(!ES.IsDead && !ES.IsAttacking)
         {
-            if (!ES.IsDead)
-            {
-                Debug.Log("ist attacking");
-            }
+            ES.IsAttacking = true;
+            EM.animator.SetInteger("Animation", 3);
         }
-
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!ES.IsDead)
         {
-            if (!ES.IsDead)
-            {
-                Debug.Log("corrio");
-                // stop atacking
-                EM.Attack();
-            }
+                ES.IsAttacking = false;
+                EM.animator.SetInteger("Animation", 0);
+
         }
     }
+
 }
