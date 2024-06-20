@@ -114,6 +114,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("cambio de estado");
         if(isAttacking)
         {
             isAttacking = false;
