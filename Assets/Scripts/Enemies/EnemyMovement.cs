@@ -11,23 +11,33 @@ public class EnemyMovement : MonoBehaviour
     // scripts variables
     [SerializeField] private GameObject target;
     [SerializeField] private int followingDistance;
+    [SerializeField] private float actualDistance;
     [SerializeField] private float speed;
-    [SerializeField] private bool hasTarget = false, isAttacking = false;
+    [SerializeField] private bool hasTarget = false;
     [SerializeField] private float indexTime;
     [SerializeField] private float mindcooldown;
+    RigidbodyConstraints originalConstrain;
 
     // private variables for moving manage
-    private int  grade,randomDesicion;
+    private int grade, randomDesicion;
     private Quaternion angle, rotation;
     [SerializeField] private NavMeshAgent NMAgent;
-    [SerializeField] private Animator animator;
+    public Animator animator;
+    public Rigidbody rb;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        originalConstrain = rb.constraints;
+    }
     private void Start()
     {
+
         if (ES.Target() != null)
         {
             target = ES.Target();
             hasTarget = true;
+            NMAgent.SetDestination(target.transform.position);
         }
         speed = ES.Speed;
         followingDistance = ES.FollowingDistance();
@@ -36,6 +46,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        actualDistance = Vector3.Distance(transform.position, target.transform.position);
         if (hasTarget)
         {
             IA();
@@ -44,29 +55,49 @@ public class EnemyMovement : MonoBehaviour
         {
             if (ES.Target() != null)
             {
+                NMAgent.enabled = true;
                 target = ES.Target();
                 hasTarget = true;
+                NMAgent.SetDestination(target.transform.position);
+                NMAgent.enabled = false;
             }
         }
     }
 
     private void IA()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) < followingDistance)
+        if( actualDistance < followingDistance)
         {
-            animator.SetInteger("Animation",2);
             Vector3 lookPose = target.transform.position - transform.position;
             lookPose.y = 0;
             rotation = Quaternion.LookRotation(lookPose);
-            NMAgent.enabled = true;
-            NMAgent.SetDestination(target.transform.position);
+            if (!ES.IsAttacking)
+            {
+                if(actualDistance >= 1.75f)
+                {   
+                        animator.SetInteger("Animation", 2);
+                        NMAgent.enabled = true;
+                        NMAgent.SetDestination(target.transform.position);
 
+                }
+                else
+                {
+                    animator.SetInteger("Animation", 0);
+                    NMAgent.enabled = false;
+                }
+            }
+            else
+            {  
+                    NMAgent.enabled = false;
+                    rb.constraints = RigidbodyConstraints.FreezePositionY;
+            }
         }
         else
         {
-            Debug.Log("no esta en rango");
-            NMAgent.enabled = false;
-            RandomMove();
+            if(!ES.IsAttacking)
+            {
+                RandomMove();
+            }
         }
     }
     private void RandomMove()
@@ -102,17 +133,16 @@ public class EnemyMovement : MonoBehaviour
 
     public void Attack()
     {
-        if(isAttacking)
-        {
-            //animator.SetBool("attack",false);
-            isAttacking = false;
-        }
-        else
-        {
-            //animator.SetBool("walk",false);
-            //animator.SetBool("run",false);
-            //animator.SetBool("attack",true);  
-            isAttacking = true;
-        }
+        PlayerStats.instance.Shield = ES.Damage;
+        RestartConstrains();
+    }
+
+    public void RestartConstrains()
+    {
+        rb.constraints = originalConstrain;
+    }
+    public void NavChange(bool valeu)
+    {
+        NMAgent.enabled = valeu;
     }
 }
