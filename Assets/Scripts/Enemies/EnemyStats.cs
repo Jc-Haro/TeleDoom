@@ -20,6 +20,13 @@ public class EnemyStats : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         isDead = false;
     }
+    private void Update()
+    {
+        if(target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
     //region created for return all base and necessary valeus
     #region ReturnValeus
     // this funcion return the speed
@@ -85,9 +92,13 @@ public class EnemyStats : MonoBehaviour
         return followingDistance;
     }
     // this funcion whill return the target
-    public GameObject Target()
+    
+    public GameObject Target
     {
-        return target;
+        get
+        {
+            return target;
+        }
     }
     
     #endregion
@@ -114,4 +125,5 @@ public class EnemyStats : MonoBehaviour
     }
 
     #endregion
+
 }

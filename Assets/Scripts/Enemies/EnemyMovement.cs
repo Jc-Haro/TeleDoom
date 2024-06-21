@@ -33,9 +33,9 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
 
-        if (ES.Target() != null)
+        if (ES.Target != null)
         {
-            target = ES.Target();
+            target = ES.Target;
             hasTarget = true;
             NMAgent.SetDestination(target.transform.position);
         }
@@ -47,21 +47,21 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         actualDistance = Vector3.Distance(transform.position, target.transform.position);
-        if (hasTarget)
+
+        if (ES.Target == null)
         {
-            IA();
+            NMAgent.enabled = true;
+            target = ES.Target;
+            hasTarget = true;
+            NMAgent.SetDestination(target.transform.position);
+            NMAgent.enabled = false;
+            RandomMove();
         }
         else
         {
-            if (ES.Target() != null)
-            {
-                NMAgent.enabled = true;
-                target = ES.Target();
-                hasTarget = true;
-                NMAgent.SetDestination(target.transform.position);
-                NMAgent.enabled = false;
-            }
+            IA();
         }
+
     }
 
     private void IA()
