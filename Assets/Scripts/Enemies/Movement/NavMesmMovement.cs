@@ -8,7 +8,7 @@ public class NavMesmMovement : MonoBehaviour
     [SerializeField] private NavMeshAgent NMAgent;
     public void IA()
     {
-        EM.animator.SetInteger("Animation", 2);
+        EM.EditAnimator(2);
         NMAgent.SetDestination(ES.Target.transform.position);
     }
 

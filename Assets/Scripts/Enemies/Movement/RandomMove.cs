@@ -20,7 +20,7 @@ public class RandomMove : MonoBehaviour
         {
 
             case 0:
-                EM.animator.SetInteger("Animation", 0);
+                EM.EditAnimator(0);
                 break;
             // in this case the enemy will walk in a random direction
             case 1:
@@ -29,7 +29,7 @@ public class RandomMove : MonoBehaviour
                 randomDesicion++;
                 break;
             case 2:
-                EM.animator.SetInteger("Animation", 1);
+                EM.EditAnimator(1);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 2);
                 transform.Translate(Vector3.forward * (.5f * ES.Speed) * Time.deltaTime);
                 break;

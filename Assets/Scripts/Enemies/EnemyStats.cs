@@ -20,22 +20,21 @@ public class EnemyStats : MonoBehaviour
     // get the target
     private void Start()
     {
-        isDead = false;
+        IsDead = false;
     }
     private void Update()
     {
-
         if (target == null)
         {
-            target = GameObject.FindGameObjectWithTag("Player");
+            Target = GameObject.FindGameObjectWithTag("Player");
         }
         if(target.activeInHierarchy == false)
         {
-            hasTarget = false;
+            HasTarget = false;
         }
         else
         {
-            hasTarget = true;
+            HasTarget = true;
             actualDistance = Vector3.Distance(transform.position, target.transform.position);
         }
     }
@@ -84,6 +83,10 @@ public class EnemyStats : MonoBehaviour
         get 
         { 
             return isDead; 
+        }
+        set
+        {
+            isDead = value;
         }
     }
     public bool HasTarget
@@ -138,6 +141,10 @@ public class EnemyStats : MonoBehaviour
         get
         {
             return target;
+        }
+        set
+        {
+            target = value;
         }
     }
     

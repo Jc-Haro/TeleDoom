@@ -4,17 +4,20 @@ public class AttackManager : MonoBehaviour
 {
     [SerializeField] private EnemyMovement EM;
     [SerializeField] private EnemyStats ES;
+    [SerializeField] private NavMesmMovement NMM;
     [SerializeField] private float indexTime;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log(" player enter to the collider");
             if (!ES.IsDead)
             {
-                //deal damage
+                Debug.Log(" attack player");
                 ES.IsAttacking = true;
-                EM.animator.SetInteger("Animation", 3);
+                NMM.NavChange(false);
+                EM.EditAnimator(3);
             }
         }
     }
@@ -23,17 +26,13 @@ public class AttackManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log(" player exit to the collider");
             if (!ES.IsDead)
             {
                 ES.IsAttacking = false;
-                EM.animator.SetInteger("Animation", 0);
+                EM.EditAnimator(0);
                 EM.enabled = true;
             }
         }
-    }
-
-    public void Attack()
-    {
-        PlayerStats.instance.Shield = ES.Damage;
     }
 }

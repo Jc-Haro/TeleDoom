@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -26,32 +27,28 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("dont has target");
         if (ES.HasTarget)
         {
-            Debug.Log("has target");
             if (ES.ActualDistance <= ES.FollowingDistance && !ES.IsDead)
             {
-                Debug.Log("actual distance < following distance && !isdead");
                 if (!ES.IsAttacking)
                 {
-                    Debug.Log("if not attacking");
+                    var lookPose = ES.Target.transform.position - transform.position;
+                    lookPose.y = 0;
+                     var rotation = Quaternion.LookRotation(lookPose);
                     if (ES.ActualDistance > ES.StopDistance) 
                     {
-                        Debug.Log("stop distance");
                         NMM.NavChange(true);
                         NMM.IA();
                     }
                     else
                     {
                         NMM.NavChange(false);
-                        RM.RandomMovement();
                     }
                 }
                 else
                 {
                     NMM.NavChange(false);
-                    RM.RandomMovement();
                 }
             }
             else
@@ -67,4 +64,14 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+
+    public void Attack()
+    {
+        PlayerStats.instance.Shield = ES.Damage;
+    }
+
+    public void EditAnimator(int value)
+    {
+        animator.SetInteger("Animation", value);
+    }
 }
