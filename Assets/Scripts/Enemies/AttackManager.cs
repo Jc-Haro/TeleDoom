@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackManager : MonoBehaviour
@@ -28,9 +27,13 @@ public class AttackManager : MonoBehaviour
             {
                 ES.IsAttacking = false;
                 EM.animator.SetInteger("Animation", 0);
-                EM.RestartConstrains();
                 EM.enabled = true;
             }
         }
+    }
+
+    public void Attack()
+    {
+        PlayerStats.instance.Shield = ES.Damage;
     }
 }
