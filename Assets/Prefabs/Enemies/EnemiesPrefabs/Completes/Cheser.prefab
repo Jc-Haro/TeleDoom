@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EM: {fileID: 4647140335157525528}
   ES: {fileID: 6525078924997176065}
+  NMM: {fileID: 4524068461289648295}
   indexTime: 0
 --- !u!1 &3462710702472442905
 GameObject:
@@ -765,10 +766,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.8155034
+  m_Radius: 0.54482013
   m_Height: 4.1661963
   m_Direction: 1
-  m_Center: {x: 0.13617198, y: 2.0227776, z: 0}
+  m_Center: {x: -0.014048259, y: 2.0227776, z: 0}
 --- !u!114 &4647140335157525528
 MonoBehaviour:
   m_ObjectHideFlags: 0
