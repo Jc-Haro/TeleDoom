@@ -97,7 +97,7 @@
                 {
                     "name": "left",
                     "id": "3898bdab-fcf7-46e4-aa8e-2d8adb86c956",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoardControlScheme",
@@ -108,7 +108,7 @@
                 {
                     "name": "right",
                     "id": "9af47280-7edd-4965-88d0-8393f77aad86",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoardControlScheme",

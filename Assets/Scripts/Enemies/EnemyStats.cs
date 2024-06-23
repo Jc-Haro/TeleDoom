@@ -9,16 +9,34 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float animationDeadTime;
-    [SerializeField] private int followingDistance;
+    [SerializeField] private float followingDistance;
+    [SerializeField] private float stopDistance;
+    [SerializeField] private float actualDistance;
     [SerializeField] private GameObject target;
+    [SerializeField] private bool hasTarget;
     [SerializeField] private bool isDead;
     [SerializeField] private bool isAttacking;
 
     // get the target
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
-        isDead = false;
+        IsDead = false;
+    }
+    private void Update()
+    {
+        if (target == null)
+        {
+            Target = GameObject.FindGameObjectWithTag("Player");
+        }
+        if(target.activeInHierarchy == false)
+        {
+            HasTarget = false;
+        }
+        else
+        {
+            HasTarget = true;
+            actualDistance = Vector3.Distance(transform.position, target.transform.position);
+        }
     }
     //region created for return all base and necessary valeus
     #region ReturnValeus
@@ -66,8 +84,23 @@ public class EnemyStats : MonoBehaviour
         { 
             return isDead; 
         }
+        set
+        {
+            isDead = value;
+        }
     }
-    
+    public bool HasTarget
+    {
+        get
+        {
+            return hasTarget;
+        }
+        set
+        {
+            hasTarget = value;
+        }
+    }
+
     public bool IsAttacking
     {
         get
@@ -80,14 +113,39 @@ public class EnemyStats : MonoBehaviour
         }
     }
     // this funcion will return the following ditance
-    public int FollowingDistance()
+    public float FollowingDistance
     {
-        return followingDistance;
+        get
+        {
+            return followingDistance;
+        }
+    }
+    public float StopDistance
+    {
+        get
+        {
+            return stopDistance;
+        }
+    }
+    public float ActualDistance
+    {
+        get
+        {
+            return actualDistance;
+        }
     }
     // this funcion whill return the target
-    public GameObject Target()
+
+    public GameObject Target
     {
-        return target;
+        get
+        {
+            return target;
+        }
+        set
+        {
+            target = value;
+        }
     }
     
     #endregion
