@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.076
+      value: 4.169385
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.884
+      value: 24.304407
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -192,7 +192,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9263d6987e98c6543b6bad7d4352fd7e, type: 2}
     - target: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_Name
-      value: MSH_TK Variant
+      value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -212,7 +216,7 @@ PrefabInstance:
       addedObject: {fileID: 1861231281622467365}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7407041462379096824}
+      addedObject: {fileID: 528411706669945671}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1748126472027859057}
@@ -279,8 +283,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &7407041462379096824
-CapsuleCollider:
+--- !u!65 &528411706669945671
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -297,11 +301,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.134896
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.0279893, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.65400916, y: 1.97031, z: 0.4801195}
+  m_Center: {x: 0.0223122, y: 1.0246553, z: 0.04125842}
 --- !u!114 &1748126472027859057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,8 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EM: {fileID: 1748126472027859057}
   ES: {fileID: 6318108016884385876}
-  indexTime: 0
-  mindcooldown: 0
+  indexTime: 2
+  mindcooldown: 2
 --- !u!195 &3679860856726055148
 NavMeshAgent:
   m_ObjectHideFlags: 0
