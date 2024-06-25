@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    public List<GameObject> weapons; // Lista de GameObjects de las armas
-    private int lastIndex; // Índice del último objeto seleccionado, privado para no ser modificado externamente
+    public List<GameObject> weapons;
+    private int lastIndex;
 
     void Start()
     {
-        // Desactiva todas las armas al inicio
+        // First deactivates all weapons, just in case
         foreach (var weapon in weapons)
         {
             weapon.SetActive(false);
         }
 
-        // Activa una arma aleatoria al inicio
+        // Activates a random weapon
         lastIndex = Random.Range(0, weapons.Count);
         weapons[lastIndex].SetActive(true);
     }
 
-    // Función para elegir un objeto aleatoriamente sin repetir el último
+    // Function to get a new random weapon, without repeating the last one
     public void GetRandomWeapon()
     {
-        // Desactiva el arma actual
+        // Current weapon gets deactivated
         weapons[lastIndex].SetActive(false);
 
         int newIndex;
 
-        // Encuentra un nuevo índice aleatorio diferente del último
+        // Creates a new index for the new weapon, if its the same as the current weapon it will create a new one until its different
         do
         {
             newIndex = Random.Range(0, weapons.Count);
         } while (newIndex == lastIndex);
 
-        // Actualiza el índice y activa la nueva arma
+        // The weapon index copies the new index and activates that weapon
         lastIndex = newIndex;
         weapons[lastIndex].SetActive(true);
     }
