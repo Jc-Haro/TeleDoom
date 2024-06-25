@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 2043714115}
   - component: {fileID: 2043714114}
   - component: {fileID: 2043714113}
+  - component: {fileID: 2043714118}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -571,6 +572,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043714118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043714112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd423337cbbc636409900ed51ddcb7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool:
+  - {fileID: 8030556431960922521, guid: 1a5729a1ff38cda4eb73ab4d06d65397, type: 3}
+  - {fileID: 1784146509847356588, guid: 394bafc3fdf9e4a489acc77e168ddb27, type: 3}
+  - {fileID: 1940242139552757830, guid: c1ed18ac24ec1a94ea19ba2ca9c55dbf, type: 3}
 --- !u!1001 &1892218827915741585
 PrefabInstance:
   m_ObjectHideFlags: 0
