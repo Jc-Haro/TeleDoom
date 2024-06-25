@@ -52,4 +52,17 @@ public class DamageGun : MonoBehaviour
             
         }
     }
+
+    public void GrenadeShoot()
+    {
+        if (bullets > 0)
+        {
+            bullets--;
+        }
+        else
+        {
+            Debug.Log("No more grenades, switching weapons");
+            weaponSwitcher.GetRandomWeapon();
+        }
+    }
 }
