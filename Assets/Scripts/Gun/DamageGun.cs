@@ -9,6 +9,7 @@ public class DamageGun : MonoBehaviour
     public int maxBullets; // The maximum number of bullets in the magazine
     public int bulletAmount; // How many shots are fired at once
     [SerializeField] private int bullets; // Current bullets in the magazine
+    [SerializeField] public GameObject rocketExplosionPrefab;
     private Transform playerCamera; 
     WeaponSwitcher weaponSwitcher; 
 
@@ -49,6 +50,11 @@ public class DamageGun : MonoBehaviour
                 if (Physics.Raycast(gunRay, out RaycastHit hitInfo, bulletRange))
                 {
                     Debug.Log("La bala golpeó: " + hitInfo.collider.name); 
+                    if (GetComponent<Gun>().rocketLauncher)
+                    {
+                        rocketExplosionPrefab.transform.position = hitInfo.point;
+                        Instantiate(rocketExplosionPrefab);
+                    }
 
                     // Check if the hit object has an EnemyStats component
                     if (hitInfo.collider.gameObject.TryGetComponent(out EnemyStats enemy))

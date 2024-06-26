@@ -45,7 +45,7 @@ public class GravityProjectile : MonoBehaviour
 
     private void Shoot()
     {
-        if(GetComponentInChildren<Gun>().grenadeLauncher)
+        if(GetComponentInChildren<Gun>().grenadeLauncher && InputManager.instance.Shoot)
         {
             GameObject granadeInstance = (GameObject)Instantiate(grenadeDamagePrefab, playerCamera.transform.position, grenadeDamagePrefab.transform.rotation);
             Vector3 rotation = crossHair.transform.position - playerCamera.transform.position;
