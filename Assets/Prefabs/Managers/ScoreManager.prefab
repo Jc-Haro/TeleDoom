@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4023497555163672839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5292136310010915909}
+  - component: {fileID: 2734937424355699740}
+  - component: {fileID: 7797673958375971444}
+  - component: {fileID: 5957327224692054300}
+  - component: {fileID: 8286636016826325517}
+  - component: {fileID: 3291016614781915076}
+  - component: {fileID: 5167721716384952569}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5292136310010915909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2734937424355699740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db280c4de3b8abd419916339a824c7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cockroache: {fileID: 7797673958375971444}
+  chaser: {fileID: 5957327224692054300}
+  tank: {fileID: 8286636016826325517}
+  eye: {fileID: 3291016614781915076}
+  sniper: {fileID: 5167721716384952569}
+--- !u!114 &7797673958375971444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b059b7c49b5a1b3489554ed9509a8fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Cockroache
+  scorePoints: 100
+  totalDefeated: 0
+--- !u!114 &5957327224692054300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b059b7c49b5a1b3489554ed9509a8fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Chaser
+  scorePoints: 200
+  totalDefeated: 0
+--- !u!114 &8286636016826325517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b059b7c49b5a1b3489554ed9509a8fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Tank
+  scorePoints: 500
+  totalDefeated: 0
+--- !u!114 &3291016614781915076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b059b7c49b5a1b3489554ed9509a8fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Eye
+  scorePoints: 700
+  totalDefeated: 0
+--- !u!114 &5167721716384952569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023497555163672839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b059b7c49b5a1b3489554ed9509a8fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Sniper
+  scorePoints: 1000
+  totalDefeated: 0
