@@ -5,6 +5,7 @@ using UnityEngine;
 public class EyeRandomMovement : MonoBehaviour
 {
     [SerializeField] EnemyStats ES;
+    [SerializeField] EyeManager EM;
     public void RandomMove()
     {
 

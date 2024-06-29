@@ -9,6 +9,9 @@ public class EyeManager : MonoBehaviour
     [SerializeField] private EyeAttack ET;
     [SerializeField] private EyeCheasing EC;
     [SerializeField] private EnemyStats ES;
+    [SerializeField] private EyeRaycats ER;
+
+    [SerializeField] Animator anim;
 
     private void Update()
     {
@@ -31,14 +34,23 @@ public class EyeManager : MonoBehaviour
 
     private void MachineMind()
     {
-        if(ES.ActualDistance < ES.FollowingDistance)
+        if (ES.ActualDistance < ES.FollowingDistance)
         {
-
+            var lookPose = ES.Target.transform.position - transform.position;
+            lookPose.y = 0;
+            var rotation = Quaternion.LookRotation(lookPose);
+            transform.rotation = rotation;
+            //ER.RaycastUpdate();
         }
         else
         {
             ERM.RandomMove();
         }
+    }
+
+    public void Animation(int valeu)
+    {
+        anim.SetInteger("animation", valeu);
     }
 }
 

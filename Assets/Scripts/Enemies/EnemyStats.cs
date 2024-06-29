@@ -28,15 +28,19 @@ public class EnemyStats : MonoBehaviour
         {
             Target = GameObject.FindGameObjectWithTag("Player");
         }
-        if(target.activeInHierarchy == false)
-        {
-            HasTarget = false;
-        }
         else
         {
-            HasTarget = true;
-            actualDistance = Vector3.Distance(transform.position, target.transform.position);
+            if (target.activeInHierarchy == false)
+            {
+                HasTarget = false;
+            }
+            else
+            {
+                HasTarget = true;
+                actualDistance = Vector3.Distance(transform.position, target.transform.position);
+            }
         }
+
     }
     //region created for return all base and necessary valeus
     #region ReturnValeus
