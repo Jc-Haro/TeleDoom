@@ -1,0 +1,329 @@
+fileFormatVersion: 2
+guid: 193815122f824154c992ae3524ecc5de
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 1
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Msh_Enemy_eye_rig(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Msh_EE_Eye.001
+      parentName: Msh_Enemy_eye_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.00000003774895, y: 0.00000004371139, z: 1.7112915e-15, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Msh_EE_Eye_Armord
+      parentName: Msh_Enemy_eye_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.00000003774895, y: 0.00000004371139, z: 1.7112915e-15, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Msh_EE_Eye_cable_01
+      parentName: Msh_Enemy_eye_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.00000003774895, y: 0.00000004371139, z: 1.7112915e-15, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Msh_EE_Eye_cable_02
+      parentName: Msh_Enemy_eye_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.00000003774895, y: 0.00000004371139, z: 1.7112915e-15, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Msh_EE_Eye_cable_03
+      parentName: Msh_Enemy_eye_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.00000003774895, y: 0.00000004371139, z: 1.7112915e-15, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Armature
+      parentName: Msh_Enemy_eye_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Root
+      parentName: Armature
+      position: {x: -0.00097402546, y: -0.0000000011920929, z: 0.0077896444}
+      rotation: {x: 0.14547354, y: 0.11226763, z: -0.721486, w: 0.6676013}
+      scale: {x: 1, y: 0.99999976, z: 1.0000001}
+    - name: BN_head
+      parentName: Root
+      position: {x: 0.000072673945, y: -0.0010918718, z: 0.000065791995}
+      rotation: {x: -0.030037172, y: 0.00000004470348, z: 0.033179324, w: 0.9989979}
+      scale: {x: 1.0000005, y: 1.0000015, z: 0.99999976}
+    - name: BN_E_protect_R_U_001
+      parentName: BN_head
+      position: {x: -0.00000022394124, y: 0.0015179313, z: 0.0000005829996}
+      rotation: {x: 0.86447674, y: 0.09883126, z: -0.18743302, w: 0.45583034}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.0000017}
+    - name: BN_E_protect_R_U_002
+      parentName: BN_E_protect_R_U_001
+      position: {x: 8.1895063e-10, y: 0.0022141002, z: 1.8626451e-11}
+      rotation: {x: 0.72538626, y: -0.002938943, z: 0.005574383, w: 0.6883133}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1.0000005}
+    - name: BN_E_protect_L_U_001
+      parentName: BN_head
+      position: {x: -0.00000022394124, y: 0.0015179313, z: 0.0000005829996}
+      rotation: {x: 0.72855145, y: -0.2660874, z: 0.4950236, w: 0.3916146}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000006}
+    - name: BN_E_protect_L_U_002
+      parentName: BN_E_protect_L_U_001
+      position: {x: -2.7603717e-10, y: 0.0022672021, z: -7.4505804e-11}
+      rotation: {x: 0.7316104, y: -0.0013715847, z: 0.0025519726, w: 0.68171686}
+      scale: {x: 1.0000012, y: 1.0000005, z: 0.99999964}
+    - name: BN_E_protect_R_D_001
+      parentName: BN_head
+      position: {x: -0.00000022394124, y: 0.0015179313, z: 0.0000005829996}
+      rotation: {x: 0.4816582, y: 0.38302284, z: -0.7487225, w: 0.24640125}
+      scale: {x: 1.0000011, y: 1.0000015, z: 1.0000013}
+    - name: BN_E_protect_R_D_002
+      parentName: BN_E_protect_R_D_001
+      position: {x: -8.067386e-10, y: 0.0021374517, z: -4.656613e-10}
+      rotation: {x: -0.7097611, y: -0.0014848635, z: 0.0029019413, w: -0.704435}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000011}
+    - name: BN_E_protect_L_D_001
+      parentName: BN_head
+      position: {x: -0.00000022394124, y: 0.0015179313, z: 0.0000005829996}
+      rotation: {x: 0.18524437, y: -0.45378473, z: 0.8662255, w: 0.09704307}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1.0000012}
+    - name: BN_E_protect_L_D_002
+      parentName: BN_E_protect_L_D_001
+      position: {x: -3.4198182e-11, y: 0.0021969038, z: 1.11758706e-10}
+      rotation: {x: 0.71824485, y: 0.0029592554, z: -0.0056485906, w: 0.69576126}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: BN_Cable_01_.001
+      parentName: BN_head
+      position: {x: -0.00006844051, y: 0.0016958179, z: 0.00017808028}
+      rotation: {x: -0.5145489, y: 0.008203349, z: -0.18805407, w: -0.8365452}
+      scale: {x: 1.0000012, y: 1.0000029, z: 1.0000001}
+    - name: BN_Cable_01_.002
+      parentName: BN_Cable_01_.001
+      position: {x: 5.2386893e-11, y: 0.0015044048, z: 5.628681e-10}
+      rotation: {x: -0.026709199, y: -0.0023688115, z: -0.009476713, w: 0.9995956}
+      scale: {x: 1.0000026, y: 1.0000056, z: 0.9999986}
+    - name: BN_Cable_01_.003
+      parentName: BN_Cable_01_.002
+      position: {x: 1.1641532e-10, y: 0.0018263182, z: 1.0302756e-10}
+      rotation: {x: -0.009984256, y: -0.0003242518, z: -0.004525495, w: 0.99993986}
+      scale: {x: 1.000001, y: 1.000002, z: 0.99999875}
+    - name: BN_Cable_01_.004
+      parentName: BN_Cable_01_.003
+      position: {x: -1.0011717e-10, y: 0.0014788089, z: 1.0826625e-10}
+      rotation: {x: 0.7965297, y: 0.0052128728, z: 0.28605628, w: 0.53262097}
+      scale: {x: 0.9999995, y: 1.0000015, z: 0.99999744}
+    - name: BN_Cable_01_.005
+      parentName: BN_Cable_01_.004
+      position: {x: -2.017936e-11, y: 0.001396785, z: 4.5277355e-11}
+      rotation: {x: 0.07105431, y: -0.00062171277, z: 0.021730654, w: 0.9972356}
+      scale: {x: 1.0000011, y: 1.0000015, z: 1.0000017}
+    - name: BN_Cable_01_.006
+      parentName: BN_Cable_01_.005
+      position: {x: 3.5573855e-12, y: 0.0014718159, z: -1.0177311e-10}
+      rotation: {x: 0.0041444325, y: -0.000014050334, z: 0.0048283385, w: 0.99997973}
+      scale: {x: 1.0000005, y: 0.9999991, z: 1.0000013}
+    - name: BN_Cable_01_.007
+      parentName: BN_Cable_01_.006
+      position: {x: 2.9685907e-11, y: 0.0014616544, z: -6.577466e-11}
+      rotation: {x: 0.076322325, y: 0.00005993049, z: 0.022847129, w: 0.9968214}
+      scale: {x: 1.0000011, y: 0.99999726, z: 1.0000049}
+    - name: BN_Cable_01_.008
+      parentName: BN_Cable_01_.007
+      position: {x: 1.10594554e-11, y: 0.0012685627, z: 1.033186e-10}
+      rotation: {x: 0.4512318, y: 0.0014680866, z: 0.17984542, w: 0.87409574}
+      scale: {x: 0.99999964, y: 0.9999973, z: 0.99999994}
+    - name: BN_Cable_03_.001
+      parentName: BN_head
+      position: {x: -0.0000013719299, y: 0.0016958178, z: -0.000027462493}
+      rotation: {x: 0.3757122, y: -0.018143205, z: 0.029241687, w: -0.9260973}
+      scale: {x: 1.0000008, y: 1.0000029, z: 1.0000008}
+    - name: BN_Cable_03_.002
+      parentName: BN_Cable_03_.001
+      position: {x: 3.4924597e-10, y: 0.0014955503, z: 9.126961e-10}
+      rotation: {x: -0.40906888, y: 0.064023905, z: -0.25629878, w: 0.8734269}
+      scale: {x: 0.99999917, y: 1.0000025, z: 0.9999971}
+    - name: BN_Cable_03_.003
+      parentName: BN_Cable_03_.002
+      position: {x: -1.11758706e-10, y: 0.0018015275, z: -3.9115547e-10}
+      rotation: {x: 0.026756283, y: 0.01137869, z: -0.02628065, w: 0.9992317}
+      scale: {x: 0.9999995, y: 0.9999991, z: 1.0000011}
+    - name: BN_Cable_03_.004
+      parentName: BN_Cable_03_.003
+      position: {x: -1.11758706e-10, y: 0.0015090562, z: 1.7229468e-10}
+      rotation: {x: -0.06314711, y: -0.00530435, z: -0.009852973, w: 0.99794155}
+      scale: {x: 1.0000014, y: 1.0000025, z: 0.9999995}
+    - name: BN_Cable_03_.005
+      parentName: BN_Cable_03_.004
+      position: {x: 3.7252902e-11, y: 0.0012737323, z: -2.7939677e-11}
+      rotation: {x: 0.108525194, y: -0.48991543, z: -0.046526425, w: 0.8637364}
+      scale: {x: 0.9999997, y: 1, z: 1}
+    - name: BN_Cable_03_.006
+      parentName: BN_Cable_03_.005
+      position: {x: 1.8626451e-11, y: 0.0013469816, z: 8.381903e-11}
+      rotation: {x: 0.056314886, y: 0.0018023425, z: 0.071070574, w: 0.99587876}
+      scale: {x: 1.0000019, y: 1.0000023, z: 1.0000013}
+    - name: BN_Cable_03_.007
+      parentName: BN_Cable_03_.006
+      position: {x: 7.4505804e-11, y: 0.0016246074, z: 1.6298145e-11}
+      rotation: {x: 0.18281744, y: -0.020220151, z: 0.2137005, w: 0.9594275}
+      scale: {x: 1.0000014, y: 0.9999994, z: 1.0000013}
+    - name: BN_Cable_03_.008
+      parentName: BN_Cable_03_.007
+      position: {x: -0, y: 0.0010971503, z: 2.6077032e-10}
+      rotation: {x: -0.24172266, y: 0.18929821, z: -0.17384104, w: -0.9356899}
+      scale: {x: 1.0000026, y: 1.0000038, z: 0.99999624}
+    - name: BN_Cable_02_.001
+      parentName: BN_head
+      position: {x: 0.00000066711317, y: 0.0016958178, z: -0.000011258157}
+      rotation: {x: 0.35220438, y: 0.08601258, z: 0.3084708, w: -0.8794314}
+      scale: {x: 0.99999994, y: 1.0000005, z: 0.9999999}
+    - name: BN_Cable_02_.002
+      parentName: BN_Cable_02_.001
+      position: {x: 6.519258e-11, y: 0.0013335885, z: -2.6077032e-10}
+      rotation: {x: -0.22502998, y: -0.03387421, z: 0.08053097, w: 0.97042716}
+      scale: {x: 1.0000013, y: 1.0000035, z: 0.9999982}
+    - name: BN_Cable_02_.003
+      parentName: BN_Cable_02_.002
+      position: {x: -1.11758706e-10, y: 0.0016829649, z: -1.4901161e-10}
+      rotation: {x: -0.123585194, y: -0.00078258663, z: 0.000020274892, w: 0.9923337}
+      scale: {x: 1.0000017, y: 1.0000032, z: 0.9999995}
+    - name: BN_Cable_02_.004
+      parentName: BN_Cable_02_.003
+      position: {x: -3.7252902e-11, y: 0.0014509109, z: 5.681068e-10}
+      rotation: {x: -0.019475885, y: 0.0005432299, z: -0.027887106, w: 0.99942124}
+      scale: {x: 1.0000021, y: 1.0000045, z: 1.0000002}
+    - name: BN_Cable_02_.005
+      parentName: BN_Cable_02_.004
+      position: {x: -6.984919e-12, y: 0.0013046919, z: 4.796311e-10}
+      rotation: {x: -0.029236613, y: 0.00017048557, z: -0.005293715, w: 0.9995585}
+      scale: {x: 1.0000019, y: 1.0000026, z: 1.0000011}
+    - name: BN_Cable_02_.006
+      parentName: BN_Cable_02_.005
+      position: {x: -1.3969838e-11, y: 0.0014872516, z: -1.4901161e-10}
+      rotation: {x: 0.045641232, y: 0.001288239, z: -0.05555431, w: 0.9974112}
+      scale: {x: 1.000002, y: 1.0000005, z: 1.0000015}
+    - name: BN_Cable_02_.007
+      parentName: BN_Cable_02_.006
+      position: {x: 4.1909514e-11, y: 0.0014566531, z: 3.259629e-11}
+      rotation: {x: 0.30807367, y: 0.06345297, z: 0.0061408253, w: 0.9492243}
+      scale: {x: 1.0000001, y: 0.99999785, z: 1.0000036}
+    - name: BN_Cable_02_.008
+      parentName: BN_Cable_02_.007
+      position: {x: 2.7939677e-11, y: 0.0008587572, z: -1.4901161e-10}
+      rotation: {x: 0.18051201, y: 0.11087587, z: -0.01109086, w: 0.9772405}
+      scale: {x: 1.0000015, y: 1.0000097, z: 0.9999906}
+    - name: BN_Cable_02_.009
+      parentName: Root
+      position: {x: 0.004618076, y: 0.0027862524, z: -0.008551194}
+      rotation: {x: -0.028281085, y: -0.051669884, z: 0.034688707, w: 0.9976609}
+      scale: {x: 1.0000008, y: 1.0000014, z: 1.0000008}
+    - name: BN_Cable_01_.009
+      parentName: Root
+      position: {x: 0.0033857399, y: 0.002454362, z: -0.00941991}
+      rotation: {x: -0.03004793, y: 0.0003188923, z: 0.033169616, w: 0.9989979}
+      scale: {x: 1.0000012, y: 1.0000013, z: 1.0000008}
+    - name: BN_Cable_03_.009
+      parentName: Root
+      position: {x: 0.0021578802, y: 0.002529318, z: -0.0095794145}
+      rotation: {x: -0.030232683, y: 0.0059111044, z: 0.033000953, w: 0.9989805}
+      scale: {x: 1.0000006, y: 1.0000007, z: 0.9999997}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Armature
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
