@@ -37,7 +37,6 @@ public class EyeManager : MonoBehaviour
         if (ES.ActualDistance < ES.FollowingDistance)
         {
             var lookPose = ES.Target.transform.position - transform.position;
-            lookPose.y = 0;
             var rotation = Quaternion.LookRotation(lookPose);
             transform.rotation = rotation;
             //ER.RaycastUpdate();
