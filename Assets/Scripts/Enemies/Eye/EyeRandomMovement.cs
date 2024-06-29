@@ -8,6 +8,6 @@ public class EyeRandomMovement : MonoBehaviour
     [SerializeField] EyeManager EM;
     public void RandomMove()
     {
-
+        EM.Animation(0);
     }
 }

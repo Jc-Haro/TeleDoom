@@ -6,7 +6,7 @@ public class EyeManager : MonoBehaviour
 {
     // eye scripts
     [SerializeField] private EyeRandomMovement ERM;
-    [SerializeField] private EyeAttack ET;
+    [SerializeField] private EyeAttack EA;
     [SerializeField] private EyeCheasing EC;
     [SerializeField] private EnemyStats ES;
     [SerializeField] private EyeRaycats ER;
@@ -34,22 +34,39 @@ public class EyeManager : MonoBehaviour
 
     private void MachineMind()
     {
-        if (ES.ActualDistance < ES.FollowingDistance)
+        if (!ES.IsDead)
         {
-            var lookPose = ES.Target.transform.position - transform.position;
-            var rotation = Quaternion.LookRotation(lookPose);
-            transform.rotation = rotation;
-            //ER.RaycastUpdate();
+            if (ES.ActualDistance < ES.FollowingDistance)
+            {
+                var lookPose = ES.Target.transform.position - transform.position;
+                lookPose.y = 0;
+                var rotation = Quaternion.LookRotation(lookPose);
+                transform.rotation = rotation;
+                ER.RaycastUpdate();
+                if (ER.HitPlayer)
+                {
+                    EA.attack();
+                }
+                else 
+                {
+                    ERM.RandomMove();
+                }
+            }
+            else
+            {
+                ERM.RandomMove();
+            }
         }
         else
         {
-            ERM.RandomMove();
+            EC.Chasing();
         }
+
     }
 
     public void Animation(int valeu)
     {
-        anim.SetInteger("animation", valeu);
+        anim.SetInteger("Animation", valeu);
     }
 }
 

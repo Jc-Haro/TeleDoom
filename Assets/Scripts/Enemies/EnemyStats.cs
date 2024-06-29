@@ -161,18 +161,9 @@ public class EnemyStats : MonoBehaviour
         life -= damage;
         if (life <= 0)
         {
-            life = 0;
-            StartCoroutine("Dead");
+            isDead = true;
         }
 
-    }
-
-    // this funcion is for the enemy dead
-    private IEnumerator Dead()
-    {
-        // here start the dead animation
-        yield return new WaitForSeconds(animationDeadTime);
-        Destroy(gameObject);
     }
 
     #endregion
