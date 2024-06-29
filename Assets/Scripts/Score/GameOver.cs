@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathEnemyType : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
-    [SerializeField] EnemyType type;
-
     private bool isQuitting = false;
 
     private void OnApplicationQuit()
@@ -13,12 +9,11 @@ public class DeathEnemyType : MonoBehaviour
         isQuitting = true;
     }
 
-
     private void OnDestroy()
     {
         if (!isQuitting)
         {
-            ScoreManager.instance.AddScore(type);
+            GenerateScoreReport.instance.GenerateReport();
         }
     }
 }

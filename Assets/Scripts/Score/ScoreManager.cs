@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
     private int multiplier = 1;
     private float multiplierCounter;
 
+    public float GameTime {  get { return gameTime; } }
+
     private void Awake()
     {
         if(instance == null)

@@ -16,7 +16,7 @@ public class ObjectGravity : MonoBehaviour
 
         if(other.gameObject.layer == 3 || other.gameObject.layer == 6)
         {
-            Destroy(this);
+            fallSpeed = 0;
         }
     }
 }
