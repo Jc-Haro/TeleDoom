@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     public float fireRate;
     public bool automatic;
     public bool grenadeLauncher;
+    public bool rocketLauncher;
     public float currentFireRate;
 
     void Start()
@@ -44,6 +45,18 @@ public class Gun : MonoBehaviour
                     onGunshot?.Invoke();
                     currentFireRate = fireRate;
                     Debug.Log("Se disparo una granada");
+                }
+            }
+        }
+        else if (rocketLauncher)
+        {
+            if (InputManager.instance.Shoot)
+            {
+                if (currentFireRate <= 0f)
+                {
+                    onGunshot?.Invoke();
+                    currentFireRate = fireRate;
+                    Debug.Log("Se disparo un misil");
                 }
             }
         }

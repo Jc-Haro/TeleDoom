@@ -18,9 +18,9 @@ public class DamageGrenade : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit enemy");
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("Hit enemy");
             other.GetComponent<EnemyStats>().TakeDamage(damage);
             Debug.Log("Enemy now at: " + other.GetComponent<EnemyStats>().Life);
         }
