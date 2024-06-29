@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropSystem : MonoBehaviour
+public class DeathEnemyType : MonoBehaviour
 {
-    [SerializeField] GameObject[] objectPool;
+    [SerializeField] EnemyType type;
+
     private bool isQuitting = false;
 
     private void OnApplicationQuit()
@@ -12,12 +13,12 @@ public class DropSystem : MonoBehaviour
         isQuitting = true;
     }
 
+
     private void OnDestroy()
     {
         if (!isQuitting)
         {
-            int randomIndex = Random.Range(0, objectPool.Length);
-            Instantiate(objectPool[randomIndex], transform.position,transform.rotation);
+            ScoreManager.instance.AddScore(type);
         }
     }
 }
