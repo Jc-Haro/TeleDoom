@@ -15,7 +15,7 @@ public class EyeCheasing : MonoBehaviour
             Debug.Log("explote");
             StartCoroutine("Explote");
         }
-
+        chasing();
     }
 
     IEnumerator Explote()
@@ -31,5 +31,10 @@ public class EyeCheasing : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
         yield return null;
+    }
+    
+    private void  chasing()
+    {
+
     }
 }

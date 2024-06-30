@@ -23,12 +23,12 @@ public class EyeManager : MonoBehaviour
             }
             else
             {
-                ERM.RandomMove();
+                ERM.RandomMoveUpdate();
             }
         }
         else
         {
-            ERM.RandomMove();
+            ERM.RandomMoveUpdate();
         }
     }
 
@@ -49,12 +49,12 @@ public class EyeManager : MonoBehaviour
                 }
                 else 
                 {
-                    ERM.RandomMove();
+                    ERM.RandomMoveUpdate();
                 }
             }
             else
             {
-                ERM.RandomMove();
+                ERM.RandomMoveUpdate();
             }
         }
         else
