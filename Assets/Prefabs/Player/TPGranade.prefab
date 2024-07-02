@@ -149,3 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collitionsLayers: 0300000006000000
+  particles: {fileID: 7259099169656285582, guid: 21834b2a63ece7c46ab3b65f901a7431, type: 3}
