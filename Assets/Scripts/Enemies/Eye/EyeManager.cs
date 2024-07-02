@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EyeManager : MonoBehaviour
 {
@@ -12,7 +11,12 @@ public class EyeManager : MonoBehaviour
     [SerializeField] private EyeRaycats ER;
 
     [SerializeField] Animator anim;
+    [SerializeField] private NavMeshAgent NMAgent;
 
+    private void Start()
+    {
+        NMAgent.enabled = false;
+    }
     private void Update()
     {
         if (ES.Target != null)
@@ -67,6 +71,15 @@ public class EyeManager : MonoBehaviour
     public void Animation(int valeu)
     {
         anim.SetInteger("Animation", valeu);
+    }
+
+    public void NavMesh(bool valeu)
+    {
+        NMAgent.enabled = valeu;
+    }
+    public void NavMEshObjective()
+    {
+        NMAgent.SetDestination(ES.Target.transform.position);
     }
 }
 

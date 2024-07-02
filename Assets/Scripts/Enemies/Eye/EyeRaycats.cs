@@ -1,13 +1,10 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.iOS;
 
 public class EyeRaycats : MonoBehaviour
 {
     [SerializeField] EnemyStats ES;
     [SerializeField] EyeManager EM;
     [SerializeField] private bool hitPlayer;
-    [SerializeField] GameObject rayObject;
 
     public void RaycastUpdate()
     {
@@ -20,7 +17,6 @@ public class EyeRaycats : MonoBehaviour
             {
                 Ray();
             }
-
         }
     }
 
