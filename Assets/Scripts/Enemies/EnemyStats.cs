@@ -28,15 +28,19 @@ public class EnemyStats : MonoBehaviour
         {
             Target = GameObject.FindGameObjectWithTag("Player");
         }
-        if(target.activeInHierarchy == false)
-        {
-            HasTarget = false;
-        }
         else
         {
-            HasTarget = true;
-            actualDistance = Vector3.Distance(transform.position, target.transform.position);
+            if (target.activeInHierarchy == false)
+            {
+                HasTarget = false;
+            }
+            else
+            {
+                HasTarget = true;
+                actualDistance = Vector3.Distance(transform.position, target.transform.position);
+            }
         }
+
     }
     //region created for return all base and necessary valeus
     #region ReturnValeus
@@ -147,7 +151,14 @@ public class EnemyStats : MonoBehaviour
             target = value;
         }
     }
-    
+
+    public float DeadAnimationTime
+    {
+        get 
+        { 
+            return DeadAnimationTime; 
+        }
+    }    
     #endregion
 
     #region DamageAndDead
@@ -157,18 +168,9 @@ public class EnemyStats : MonoBehaviour
         life -= damage;
         if (life <= 0)
         {
-            life = 0;
-            StartCoroutine("Dead");
+            isDead = true;
         }
 
-    }
-
-    // this funcion is for the enemy dead
-    private IEnumerator Dead()
-    {
-        // here start the dead animation
-        yield return new WaitForSeconds(animationDeadTime);
-        Destroy(gameObject);
     }
 
     #endregion
