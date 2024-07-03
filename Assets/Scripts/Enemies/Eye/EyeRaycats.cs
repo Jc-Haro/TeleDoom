@@ -26,9 +26,10 @@ public class EyeRaycats : MonoBehaviour
         Debug.DrawRay(ray.origin,ray.direction * ES.FollowingDistance);
         RaycastHit hit;
         Physics.Raycast(ray,out hit);
+        Debug.Log(hit.collider.gameObject.tag);
         if(hit.transform != null)
         {
-            if (hit.transform.CompareTag("Player"))
+            if (hit.collider.gameObject.CompareTag("Player"))
             {
                 hitPlayer = true;
             }

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Map
   - Tp
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Wall
   - EdgeClimbLayer
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

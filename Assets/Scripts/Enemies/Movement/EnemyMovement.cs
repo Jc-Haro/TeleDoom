@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -13,7 +14,6 @@ public class EnemyMovement : MonoBehaviour
 
     // scripts variables
     RigidbodyConstraints originalConstrain;
-    
 
     // private variables for moving manage
     public Animator animator;
@@ -27,20 +27,27 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (ES.HasTarget)
+        if(!ES.IsDead)
         {
-            if (ES.ActualDistance <= ES.FollowingDistance && !ES.IsDead)
+            if (ES.HasTarget)
             {
-                if (!ES.IsAttacking)
+                if (ES.ActualDistance <= ES.FollowingDistance)
                 {
-                    var lookPose = ES.Target.transform.position - transform.position;
-                    lookPose.y = 0;
-                     var rotation = Quaternion.LookRotation(lookPose);
-                    transform.rotation = rotation;
-                    if (ES.ActualDistance > ES.StopDistance) 
+                    if (!ES.IsAttacking)
                     {
-                        NMM.NavChange(true);
-                        NMM.IA();
+                        var lookPose = ES.Target.transform.position - transform.position;
+                        lookPose.y = 0;
+                        var rotation = Quaternion.LookRotation(lookPose);
+                        transform.rotation = rotation;
+                        if (ES.ActualDistance > ES.StopDistance)
+                        {
+                            NMM.NavChange(true);
+                            NMM.IA();
+                        }
+                        else
+                        {
+                            NMM.NavChange(false);
+                        }
                     }
                     else
                     {
@@ -50,6 +57,7 @@ public class EnemyMovement : MonoBehaviour
                 else
                 {
                     NMM.NavChange(false);
+                    RM.RandomMovement();
                 }
             }
             else
@@ -60,12 +68,16 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            NMM.NavChange(false);
-            RM.RandomMovement();
+            StartCoroutine("Dead");
         }
     }
-
-
+    IEnumerator Dead()
+    {
+        EditAnimator(4);
+        yield return new WaitForSeconds(ES.DeadAnimationTime);
+        Destroy(gameObject);
+        yield return null;
+    }
     public void Attack()
     {
         PlayerStats.instance.Shield = ES.Damage;

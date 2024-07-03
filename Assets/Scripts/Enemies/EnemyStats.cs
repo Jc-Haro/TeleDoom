@@ -151,7 +151,14 @@ public class EnemyStats : MonoBehaviour
             target = value;
         }
     }
-    
+
+    public float DeadAnimationTime
+    {
+        get 
+        { 
+            return DeadAnimationTime; 
+        }
+    }    
     #endregion
 
     #region DamageAndDead
