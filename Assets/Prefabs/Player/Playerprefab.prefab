@@ -252,11 +252,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 4835265810617540876}
-  - {fileID: 1627572857611914851}
-  - {fileID: 1345112057495392545}
-  - {fileID: 7093836244184120809}
-  - {fileID: 1817520313286335785}
+  - weapon: {fileID: 4835265810617540876}
+    bulletStart: {fileID: 6460680503430959269}
+  - weapon: {fileID: 7093836244184120809}
+    bulletStart: {fileID: 8653777512075287826}
+  - weapon: {fileID: 1627572857611914851}
+    bulletStart: {fileID: 5126776210628921463}
+  - weapon: {fileID: 1345112057495392545}
+    bulletStart: {fileID: 9026945198007222139}
+  - weapon: {fileID: 1817520313286335785}
+    bulletStart: {fileID: 8035846474042998246}
 --- !u!1 &1345112057495392545
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +295,8 @@ Transform:
   m_LocalPosition: {x: 0.73500013, y: -0.42899996, z: 0.7950001}
   m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.73925436}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 9026945198007222139}
   m_Father: {fileID: 8611309056157998417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4300400763659754360
@@ -426,6 +432,8 @@ MonoBehaviour:
   bulletAmount: 0
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
+  bulletStartPosition: {fileID: 9026945198007222139}
+  bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
 --- !u!1 &1627572857611914851
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +467,8 @@ Transform:
   m_LocalPosition: {x: 0.73500013, y: -0.42899996, z: 0.7950001}
   m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.73925436}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5126776210628921463}
   m_Father: {fileID: 8611309056157998417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &10364820103438670
@@ -583,6 +592,8 @@ MonoBehaviour:
   bulletAmount: 1
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
+  bulletStartPosition: {fileID: 5126776210628921463}
+  bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
 --- !u!1 &1817520313286335785
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +627,8 @@ Transform:
   m_LocalPosition: {x: 0.73500013, y: -0.42899996, z: 0.7950001}
   m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.73925436}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8035846474042998246}
   m_Father: {fileID: 8611309056157998417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &819756072611449822
@@ -740,6 +752,70 @@ MonoBehaviour:
   bulletAmount: 1
   bullets: 0
   rocketExplosionPrefab: {fileID: 5142896499187725633, guid: c637eb207e33d09408c8301a264ab24e, type: 3}
+  bulletStartPosition: {fileID: 8035846474042998246}
+  bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
+--- !u!1 &2301896074446106111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8035846474042998246}
+  m_Layer: 0
+  m_Name: RocketLauncherBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8035846474042998246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301896074446106111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.501}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2181032663425585239}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2704798436401297369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8653777512075287826}
+  m_Layer: 0
+  m_Name: ShotGunBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8653777512075287826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2704798436401297369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7570215947451846885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2736368104535365170
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +946,37 @@ MonoBehaviour:
   granadePefab: {fileID: 3984966208577746144, guid: 665d85b64099ca3409b44269d87d0c32, type: 3}
   crossHair: {fileID: 8728137904967177803}
   granadeCooldownSeconds: 1
+--- !u!1 &3464252532909995309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6460680503430959269}
+  m_Layer: 0
+  m_Name: PistolBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6460680503430959269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464252532909995309}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.482}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 924935394786948452}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4249400199459806452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1117,8 @@ Transform:
   m_LocalPosition: {x: 0.73500013, y: -0.42899996, z: 0.7950001}
   m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.73925436}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6460680503430959269}
   m_Father: {fileID: 8611309056157998417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6915527126925366010
@@ -1134,6 +1242,39 @@ MonoBehaviour:
   bulletAmount: 1
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
+  bulletStartPosition: {fileID: 6460680503430959269}
+  bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
+--- !u!1 &4871259571712213648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5126776210628921463}
+  m_Layer: 0
+  m_Name: SmgBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5126776210628921463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871259571712213648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5271949539722484649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7093836244184120809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1308,8 @@ Transform:
   m_LocalPosition: {x: 0.73500013, y: -0.42899996, z: 0.7950001}
   m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.73925436}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8653777512075287826}
   m_Father: {fileID: 8611309056157998417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6065305856185018643
@@ -1291,6 +1433,39 @@ MonoBehaviour:
   bulletAmount: 5
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
+  bulletStartPosition: {fileID: 8653777512075287826}
+  bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
+--- !u!1 &8069275171853510697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9026945198007222139}
+  m_Layer: 0
+  m_Name: GrenadeLauncherBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &9026945198007222139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8069275171853510697}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 717404648190925975}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8728137904967177803
 GameObject:
   m_ObjectHideFlags: 0
