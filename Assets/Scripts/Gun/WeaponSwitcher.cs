@@ -11,7 +11,8 @@ public class WeaponSwitcher : MonoBehaviour
         public Transform bulletStart;
     }
     public List<Weapon> weapons;
-    private int lastIndex;
+    public int lastIndex;
+    public bool hasRocketLauncher = false;
 
     void Start()
     {
@@ -23,12 +24,18 @@ public class WeaponSwitcher : MonoBehaviour
 
         // Activates a random weapon
         lastIndex = UnityEngine.Random.Range(0, weapons.Count);
-        weapons[lastIndex].weapon.SetActive(true);
+        if(weapons[lastIndex].weapon == weapons[4].weapon && !hasRocketLauncher)
+            GetRandomWeapon();
+        else
+            weapons[lastIndex].weapon.SetActive(true);
     }
 
     // Function to get a new random weapon, without repeating the last one
     public void GetRandomWeapon()
     {
+        weapons[4].weapon.SetActive(false);
+        hasRocketLauncher = false;
+
         // Current weapon gets deactivated
         weapons[lastIndex].weapon.SetActive(false);
 
@@ -43,5 +50,11 @@ public class WeaponSwitcher : MonoBehaviour
         // The weapon index copies the new index and activates that weapon
         lastIndex = newIndex;
         weapons[lastIndex].weapon.SetActive(true);
+        Debug.Log("new weapon: " + lastIndex);
+
+        if(weapons[4].weapon.activeSelf && !hasRocketLauncher)
+        {
+            GetRandomWeapon();
+        }
     }
 }
