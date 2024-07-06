@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -16,6 +15,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private bool hasTarget;
     [SerializeField] private bool isDead;
     [SerializeField] private bool isAttacking;
+    [SerializeField] private bool isTank;
 
     // get the target
     private void Start()
@@ -114,6 +114,13 @@ public class EnemyStats : MonoBehaviour
         set
         {
             isAttacking = value;
+        }
+    }
+    public bool IsTank
+    {
+        get
+        {
+            return isTank;
         }
     }
     // this funcion will return the following ditance
