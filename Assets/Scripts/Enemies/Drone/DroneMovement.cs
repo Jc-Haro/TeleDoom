@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,16 +6,12 @@ public class DroneMovement : MonoBehaviour
     [SerializeField] private NavMeshAgent NMAgent;
     [SerializeField] private EnemyStats ES;
 
-    private void Update()
+    public void NavMeshMovement(bool valeu)
     {
-        if(ES.HasTarget)
-        {
-            NMAgent.enabled = true;
-            NMAgent.SetDestination(ES.Target.transform.position);
-        }
-        else
-        {
-            NMAgent.enabled=false;
-        }
+        NMAgent.enabled = valeu;
+    }
+    public void NavmeshDestination(GameObject objective)
+    {
+        NMAgent.SetDestination(objective.transform.position);
     }
 }
