@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1a8e1a8713ab64683720917c7cd337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectParticle: {fileID: 2406970831805686783, guid: 58aa50a55a7a147439eba2337b13f0a8, type: 3}
   shieldAmount: 10
 --- !u!65 &8980854580545014283
 BoxCollider:

@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcfddc29d09df2748a879f00e91ecd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectParticle: {fileID: 2406970831805686783, guid: 83d073b752922ab418bbfe537a682580, type: 3}
   boostDuration: 5
   boostMultiplier: 2
 --- !u!65 &5118130196371401868
