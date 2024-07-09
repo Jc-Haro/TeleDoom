@@ -8,6 +8,7 @@ TagManager:
   - Map
   - Tp
   - EnemyBullet
+  - SniperJumpPoint
   layers:
   - Default
   - TransparentFX
