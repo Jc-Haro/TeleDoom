@@ -8,7 +8,7 @@ public class WeaponSwitchDrop : DropObject
 
     public override void OnCollect()
     {
-        weaponHolder.GetComponent<WeaponSwitcher>().GetRandomWeapon();
+        WeaponSwitcher.instance.GetRandomWeapon();
         Debug.Log("Changed weapon");
     }
 }

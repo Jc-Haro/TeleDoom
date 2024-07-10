@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
       propertyPath: m_Name
-      value: Msh_Sniper_Enemy Variant
+      value: Sniper
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
       propertyPath: m_IsActive
@@ -439,6 +439,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6244029541720597353}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5591856936335779729}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7528001804884247397}
   m_SourcePrefab: {fileID: 100100000, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
 --- !u!4 &41017488687813025 stripped
 Transform:
@@ -498,6 +504,36 @@ MonoBehaviour:
   ES: {fileID: 3074069694455390650}
   spawnAttack: {fileID: 3157714688994797666}
   bullet: {fileID: 7731557079379433106, guid: 5cdc5c1fbcef78349a40f9744311bd68, type: 3}
+--- !u!114 &5591856936335779729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854111201571932955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd423337cbbc636409900ed51ddcb7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool:
+  - {fileID: 8030556431960922521, guid: 1a5729a1ff38cda4eb73ab4d06d65397, type: 3}
+  - {fileID: 1784146509847356588, guid: 394bafc3fdf9e4a489acc77e168ddb27, type: 3}
+  - {fileID: 1940242139552757830, guid: c1ed18ac24ec1a94ea19ba2ca9c55dbf, type: 3}
+  - {fileID: 8402678819434327589, guid: fba11354c1f5cb242909b4d5bde3c2f4, type: 3}
+--- !u!114 &7528001804884247397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854111201571932955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01965b566bbc55b42b832606156aba8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
 --- !u!95 &6228924569599413211 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 0d6f1acf9b0588143a6ee1c3b5bcab4c, type: 3}
