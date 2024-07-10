@@ -17,7 +17,7 @@ public class SniperMove : MonoBehaviour
     public void Jump()
     {
         SM.SetAnimation(0);
-        if(canJump)
+        if(canJump && JumpP.Count > 0)
         {
             StartCoroutine(JumpFade());
         }
