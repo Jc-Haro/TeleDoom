@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] GameObject[] enemiesPool;
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionDistance);
