@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 50
   bulletRange: 0
   maxBullets: 5
   bulletAmount: 0
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 15
   bulletRange: 100
   maxBullets: 30
   bulletAmount: 1
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 999
   bulletRange: 100
   maxBullets: 1
   bulletAmount: 1
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 25
   bulletRange: 100
   maxBullets: 10
   bulletAmount: 1
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 15
   bulletRange: 100
   maxBullets: 10
   bulletAmount: 5
