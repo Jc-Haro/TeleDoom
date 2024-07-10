@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888fa0fd049f9f045bcc5625710815ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectParticle: {fileID: 8508223527199581252, guid: 992f6eacf244a7c4aaec0f929bdbf534, type: 3}
-  weaponHolder: {fileID: 0}
+  collectParticle: {fileID: 2406970831805686783, guid: a8d4984564577c442bdc60c01b1184c1, type: 3}
+  weaponHolder: {fileID: 2406970831805686783, guid: a8d4984564577c442bdc60c01b1184c1, type: 3}
 --- !u!114 &1821026577480506355
 MonoBehaviour:
   m_ObjectHideFlags: 0
