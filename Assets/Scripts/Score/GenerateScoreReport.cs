@@ -25,15 +25,18 @@ public class GenerateScoreReport : MonoBehaviour
 
     public void GenerateReport()
     {
+        int finalScore = (int)(ScoreManager.instance.GameTime*100);
         m_ReportText += "Mission Over\n";
         m_ReportText += "Time survived " + FormatTime(ScoreManager.instance.GameTime)+"\n";
         for(int i = 0; i < m_enemyScoreTypeStats.Length; i++)
         {
+            finalScore += m_enemyScoreTypeStats[i].totalDefeated * m_enemyScoreTypeStats[i].scorePoints;
             if (m_enemyScoreTypeStats[i].totalDefeated > 0)
             {
                 m_ReportText += "Total " + m_enemyScoreTypeStats[i].displayName+ "s defeated " + m_enemyScoreTypeStats[i].totalDefeated + "\n";
             }
         }
+        m_ReportText += "Final Score " + finalScore + "\n";
         m_ReportUI.text = m_ReportText;
         m_GameOverCanvas.gameObject.SetActive(true);
         m_GameOverCamera.gameObject.SetActive(true);
