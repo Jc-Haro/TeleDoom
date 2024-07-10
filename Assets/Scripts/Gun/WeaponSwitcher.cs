@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
+    public static WeaponSwitcher instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     [Serializable]
     public struct Weapon
     {
