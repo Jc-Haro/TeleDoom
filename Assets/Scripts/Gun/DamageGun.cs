@@ -15,6 +15,7 @@ public class DamageGun : MonoBehaviour
     WeaponSwitcher weaponSwitcher;
     [SerializeField]Transform bulletStartPosition;
     [SerializeField]TrailRenderer bulletTrail;
+    [SerializeField]PlaySound sound;
   
     void Start()
     {
@@ -34,7 +35,7 @@ public class DamageGun : MonoBehaviour
         if (bullets > 0) // Check if there are bullets left
         {
             bullets--;
-
+            sound.PlaySoundOneShot();
             for (int i = 0; i < bulletAmount; i++) // Loop to shoot multiple bullets
             {
                 // We create a little deviation for each bullet with random values on each axis
@@ -109,6 +110,7 @@ public class DamageGun : MonoBehaviour
         if (bullets > 0)
         {
             bullets--;
+            sound.PlaySoundOneShot();
         }
         else
         {
