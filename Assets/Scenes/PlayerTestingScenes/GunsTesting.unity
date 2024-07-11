@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4835265810617540876, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093836244184120809, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -511,6 +519,7 @@ MonoBehaviour:
   hasTarget: 0
   isDead: 0
   isAttacking: 0
+  isTank: 0
 --- !u!54 &1877546176
 Rigidbody:
   m_ObjectHideFlags: 0
