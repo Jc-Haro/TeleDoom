@@ -8,6 +8,7 @@ public class DamageGun : MonoBehaviour
     public float bulletRange; 
     public int maxBullets; // The maximum number of bullets in the magazine
     public int bulletAmount; // How many shots are fired at once
+    public bool shotgun;
     [SerializeField] private int bullets; // Current bullets in the magazine
     [SerializeField] public GameObject rocketExplosionPrefab;
     private Transform playerCamera; 
@@ -38,10 +39,14 @@ public class DamageGun : MonoBehaviour
             {
                 // We create a little deviation for each bullet with random values on each axis
                 Vector3 deviation = playerCamera.forward;
-                deviation.x += Random.Range(-0.1f, 0.1f); 
-                deviation.y += Random.Range(-0.1f, 0.1f); 
-                deviation.z += Random.Range(-0.1f, 0.1f); 
-                deviation.Normalize(); // Normalize the direction vector
+                if (shotgun)
+                {
+                    deviation.x += Random.Range(-0.1f, 0.1f);
+                    deviation.y += Random.Range(-0.1f, 0.1f);
+                    deviation.z += Random.Range(-0.1f, 0.1f);
+                    deviation.Normalize(); // Normalize the direction vector
+                }
+
 
                 // Create a ray from the camera position in the deviated direction
                 Ray gunRay = new Ray(bulletStartPosition.position, deviation);
