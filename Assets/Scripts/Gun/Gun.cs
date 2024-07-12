@@ -63,7 +63,7 @@ public class Gun : MonoBehaviour
         else
         {
             // with GetMouseButtonDown, this will execute only once button press.
-            if (Input.GetMouseButtonDown(0))
+            if (InputManager.instance.AutomaticShoot)
             {
                 if (currentFireRate <= 0f)
                 {
