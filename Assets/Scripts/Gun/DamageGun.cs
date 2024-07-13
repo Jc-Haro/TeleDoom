@@ -16,7 +16,7 @@ public class DamageGun : MonoBehaviour
     [SerializeField]Transform bulletStartPosition;
     [SerializeField]TrailRenderer bulletTrail;
     [SerializeField]PlaySound sound;
-  
+
     void Start()
     {
         playerCamera = Camera.main.transform;
