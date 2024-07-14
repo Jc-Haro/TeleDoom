@@ -59,8 +59,8 @@ public class PlayerStats : MonoBehaviour
                 currentShield + value < maxShield ? currentShield + value : maxShield
                 //If its's damage
                 : ShieldDamage(value);
-            Debug.Log(currentHealt);
-            Debug.Log(currentShield);
+            Debug.Log("healt" + currentHealt);
+            Debug.Log("Shield" + currentShield);
         }
             
     }
