@@ -1,7 +1,5 @@
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -12,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private AttackManager AM;
     [SerializeField] private RandomMove RM;
     [SerializeField] private NavMesmMovement NMM;
+
 
     // private variables for moving manage
     public Animator animator;
@@ -86,6 +85,7 @@ public class EnemyMovement : MonoBehaviour
     }
     public void Attack()
     {
+        Debug.Log("enemyAttack");
         PlayerStats.instance.Shield = ES.Damage;
     }
 
