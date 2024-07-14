@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] float spawnTime;
     [SerializeField] float detectionDistance;
+    public Vector3 vTransform;
     float spawnCounter = 0;
     
 
@@ -19,12 +20,22 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
+        vTransform = transform.position;
         spawnCounter += TimeIncrement();
         if (spawnCounter > spawnTime)
         {
-            int randomIndex = Random.Range(0, enemiesPool.Length);
-            Instantiate(enemiesPool[randomIndex], transform.position, enemiesPool[randomIndex].transform.rotation);
-            spawnCounter = 0;
+            if (transform.position.y < 39)
+            {
+                int randomIndex = Random.Range(0, 2);
+                Instantiate(enemiesPool[randomIndex], transform.position, enemiesPool[randomIndex].transform.rotation);
+                spawnCounter = 0;
+            }
+            else
+            {
+                int randomIndex = Random.Range(2, 4);
+                Instantiate(enemiesPool[randomIndex], transform.position, enemiesPool[randomIndex].transform.rotation);
+                spawnCounter = 0;
+            }
         }
     }
 
