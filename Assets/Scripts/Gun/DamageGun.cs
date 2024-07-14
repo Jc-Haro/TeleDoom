@@ -107,7 +107,7 @@ public class DamageGun : MonoBehaviour
 
     public void GrenadeShoot()
     {
-        if (bullets > 0)
+        if (bullets >= 0)
         {
             bullets--;
             sound.PlaySoundOneShot();
