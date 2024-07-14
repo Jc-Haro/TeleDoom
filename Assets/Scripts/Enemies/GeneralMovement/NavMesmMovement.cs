@@ -8,8 +8,11 @@ public class NavMesmMovement : MonoBehaviour
     [SerializeField] private NavMeshAgent NMAgent;
     public void IA()
     {
-        EM.EditAnimator(2);
-        NMAgent.SetDestination(ES.Target.transform.position);
+        if(ES.HasTarget)
+        {
+            EM.EditAnimator(2);
+            NMAgent.SetDestination(ES.Target.transform.position);
+        }
     }
 
     // navmesh change enable or disable

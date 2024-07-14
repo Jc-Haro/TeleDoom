@@ -71,8 +71,8 @@ public class EdgeClimb : MonoBehaviour
                     }
                 }
             }
+            canVault = false;
         }
-        canVault = false;
     }
 
     IEnumerator LerpEdgeClimb(Vector3 targetPosition, float duration) // Duration is how much it takes to vault/edge climb
