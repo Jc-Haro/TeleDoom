@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class DamageGun : MonoBehaviour
@@ -14,9 +15,10 @@ public class DamageGun : MonoBehaviour
     private Transform playerCamera; 
     WeaponSwitcher weaponSwitcher;
     [SerializeField]Transform bulletStartPosition;
+    [SerializeField] float sphereRadius = 1.0f;
     [SerializeField]TrailRenderer bulletTrail;
     [SerializeField]PlaySound sound;
-    [SerializeField] LayerMask raycastHitLayers;
+    [SerializeField] private LayerMask raycastHitLayers;
 
     void Start()
     {
@@ -60,7 +62,7 @@ public class DamageGun : MonoBehaviour
 
 
                 // Check if the ray hits something
-                if (Physics.Raycast(gunRay, out RaycastHit hitInfo, bulletRange))
+                if (Physics.SphereCast(gunRay,sphereRadius,out RaycastHit hitInfo, bulletRange, raycastHitLayers))
                 {
                     Debug.Log("La bala golpeó: " + hitInfo.collider.name); 
                     if (GetComponent<Gun>().rocketLauncher)
