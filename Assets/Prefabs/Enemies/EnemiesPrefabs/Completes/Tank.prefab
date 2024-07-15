@@ -715,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 100
   speed: 5
-  damage: -10
+  damage: -15
   attackSpeed: 2
   animationDeadTime: 2
   followingDistance: 25
