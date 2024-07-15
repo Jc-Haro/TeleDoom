@@ -67,66 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EM: {fileID: 1748126472027859057}
-  ES: {fileID: 6318108016884385876}
+  ES: {fileID: 0}
   NMM: {fileID: 4956483187364329842}
   indexTime: 0
---- !u!1 &4795800018364550636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6835233884033490278}
-  - component: {fileID: 6318108016884385876}
-  m_Layer: 0
-  m_Name: Stats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6835233884033490278
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795800018364550636}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.57142854, y: 0.57142854, z: 0.57142854}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6603099480278791351}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6318108016884385876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795800018364550636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6913d05258002141a65d5f073316170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 100
-  speed: 5
-  damage: 10
-  attackSpeed: 2
-  animationDeadTime: 2
-  followingDistance: 25
-  stopDistance: 1.75
-  actualDistance: 0
-  target: {fileID: 0}
-  hasTarget: 0
-  isDead: 0
-  isAttacking: 0
-  isTank: 1
 --- !u!1001 &6640648374832337756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +319,10 @@ PrefabInstance:
       value: Tank
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -544,9 +491,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6835233884033490278}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2456261927653165907}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
@@ -576,6 +520,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1180503882895934744}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7587939545436542446}
   m_SourcePrefab: {fileID: 100100000, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
 --- !u!1 &5830256418131095053 stripped
 GameObject:
@@ -663,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1513a2ad93d0ccc48a6f33fecd522e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ES: {fileID: 6318108016884385876}
+  ES: {fileID: 7587939545436542446}
   AM: {fileID: 55067793547504855}
   RM: {fileID: 4342458729233786447}
   NMM: {fileID: 4956483187364329842}
@@ -683,8 +630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EM: {fileID: 1748126472027859057}
-  ES: {fileID: 6318108016884385876}
+  ES: {fileID: 7587939545436542446}
   NMAgent: {fileID: 3679860856726055148}
+  navState: 0
 --- !u!114 &4342458729233786447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EM: {fileID: 1748126472027859057}
-  ES: {fileID: 6318108016884385876}
+  ES: {fileID: 0}
   indexTime: 2
   mindcooldown: 2
 --- !u!195 &3679860856726055148
@@ -753,6 +701,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+--- !u!114 &7587939545436542446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5830256418131095053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6913d05258002141a65d5f073316170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 100
+  speed: 5
+  damage: -10
+  attackSpeed: 2
+  animationDeadTime: 2
+  followingDistance: 25
+  stopDistance: 1.75
+  actualDistance: 0
+  target: {fileID: 0}
+  hasTarget: 0
+  isDead: 0
+  isAttacking: 0
+  isTank: 1
 --- !u!4 &6603099480278791351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}

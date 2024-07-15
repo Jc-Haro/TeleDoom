@@ -26,7 +26,6 @@ public class EdgeClimb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("can vault: " + canVault);
         Vault();
     }
 
