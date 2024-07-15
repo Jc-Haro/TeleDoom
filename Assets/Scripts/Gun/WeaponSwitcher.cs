@@ -37,7 +37,8 @@ public class WeaponSwitcher : MonoBehaviour
 
         // Activates a random weapon
         lastIndex = UnityEngine.Random.Range(0, weapons.Count);
-        if(weapons[lastIndex].weapon == weapons[4].weapon && !hasRocketLauncher)
+        weapons[lastIndex].weapon.gameObject.GetComponent<WeaponOnAble>().WeaponAble();
+        if (weapons[lastIndex].weapon == weapons[4].weapon && !hasRocketLauncher)
             GetRandomWeapon();
         else
             weapons[lastIndex].weapon.SetActive(true);
@@ -63,6 +64,7 @@ public class WeaponSwitcher : MonoBehaviour
         // The weapon index copies the new index and activates that weapon
         lastIndex = newIndex;
         weapons[lastIndex].weapon.SetActive(true);
+        weapons[lastIndex].weapon.gameObject.GetComponent<WeaponOnAble>().WeaponAble();
         Debug.Log("new weapon: " + lastIndex);
 
         if(weapons[4].weapon.activeSelf && !hasRocketLauncher)

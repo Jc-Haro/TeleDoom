@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 5
   bulletRange: 0
   maxBullets: 5
   bulletAmount: 0
@@ -536,8 +536,12 @@ MonoBehaviour:
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
   bulletStartPosition: {fileID: 9026945198007222139}
+  sphereRadius: 1
   bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
   sound: {fileID: 1987310285264913258}
+  raycastHitLayers:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!114 &1987310285264913258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +557,6 @@ MonoBehaviour:
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
   - {fileID: 8300000, guid: 3f9506a016d05744ca5a3618676a45fb, type: 3}
-  - {fileID: 8300000, guid: e2074a7221de97a4cad50a72ed1f63f4, type: 3}
 --- !u!114 &7528371686234585960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,11 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
-  - {fileID: 8300000, guid: 49bcf8a7707f75047825e3742d7f853a, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: c33d962ebabf6864e8913937af20d0ce, type: 3}
-  - {fileID: 8300000, guid: 630dbfcac11676a4fbfa4915409007ee, type: 3}
+  - {fileID: 8300000, guid: 1c208561f58969041b5ba3c995f01b62, type: 3}
 --- !u!1 &1627572857611914851
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 18
   bulletRange: 100
   maxBullets: 30
   bulletAmount: 1
@@ -736,8 +735,12 @@ MonoBehaviour:
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
   bulletStartPosition: {fileID: 5126776210628921463}
+  sphereRadius: 1
   bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
   sound: {fileID: 4173520405615799946}
+  raycastHitLayers:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!114 &4173520405615799946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,18 +756,7 @@ MonoBehaviour:
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
   - {fileID: 8300000, guid: 51c638833d006cf46b167c98ec1b6de7, type: 3}
-  - {fileID: 8300000, guid: 93b13415c1689dc4fb15890680e2dd54, type: 3}
-  - {fileID: 8300000, guid: 6f49ede0dd39fed47bebc82d0c3b0cdb, type: 3}
-  - {fileID: 8300000, guid: 102673e2f7317144fb6d50370a9cdaeb, type: 3}
-  - {fileID: 8300000, guid: e09be2ec7215d444487c995e10810cdb, type: 3}
   - {fileID: 8300000, guid: b64a6c99714658a4eb59bcf1dadc76d9, type: 3}
-  - {fileID: 8300000, guid: 070909fb9e702714ea8445aba6fda684, type: 3}
-  - {fileID: 8300000, guid: 993bc8333ce8fb446946078b5dafceff, type: 3}
-  - {fileID: 8300000, guid: cf8d009377cb2dd4496244ee55b3d870, type: 3}
-  - {fileID: 8300000, guid: 5b9af6d7f89cb464c91335a95bf05d54, type: 3}
-  - {fileID: 8300000, guid: 0ea912db9ec4cef4cad0e5a53dd5ce91, type: 3}
-  - {fileID: 8300000, guid: c1b8a7e3281cac949817fd850e8fadf8, type: 3}
-  - {fileID: 8300000, guid: a00086ea5444c1546ad2b7273d9825e6, type: 3}
 --- !u!114 &1284728694963305309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,9 +773,6 @@ MonoBehaviour:
   m_AudioClip:
   - {fileID: 8300000, guid: 49bcf8a7707f75047825e3742d7f853a, type: 3}
   - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: c33d962ebabf6864e8913937af20d0ce, type: 3}
-  - {fileID: 8300000, guid: 630dbfcac11676a4fbfa4915409007ee, type: 3}
 --- !u!1 &1817520313286335785
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 999
+  damage: 100
   bulletRange: 100
   maxBullets: 1
   bulletAmount: 1
@@ -946,8 +935,12 @@ MonoBehaviour:
   bullets: 0
   rocketExplosionPrefab: {fileID: 6234792750105169062, guid: 0309eb622c04273428464e95ee3fc574, type: 3}
   bulletStartPosition: {fileID: 8035846474042998246}
+  sphereRadius: 1
   bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
   sound: {fileID: 7418164845361527672}
+  raycastHitLayers:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!114 &7418164845361527672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,9 +955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
-  - {fileID: 8300000, guid: 48e5d2e080bea7c47bd81c2596007d56, type: 3}
-  - {fileID: 8300000, guid: 63a415f52f408284aaeb46aae5eeeb82, type: 3}
-  - {fileID: 8300000, guid: 34ae720e21830874b9494ef8fc98b694, type: 3}
+  - {fileID: 8300000, guid: e2074a7221de97a4cad50a72ed1f63f4, type: 3}
 --- !u!114 &1468819567165777858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,11 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
-  - {fileID: 8300000, guid: 49bcf8a7707f75047825e3742d7f853a, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: c33d962ebabf6864e8913937af20d0ce, type: 3}
-  - {fileID: 8300000, guid: 630dbfcac11676a4fbfa4915409007ee, type: 3}
+  - {fileID: 8300000, guid: 1c208561f58969041b5ba3c995f01b62, type: 3}
 --- !u!1 &2301896074446106111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 30
   bulletRange: 100
   maxBullets: 10
   bulletAmount: 1
@@ -1477,8 +1464,12 @@ MonoBehaviour:
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
   bulletStartPosition: {fileID: 6460680503430959269}
+  sphereRadius: 1
   bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
   sound: {fileID: 7877528944825014116}
+  raycastHitLayers:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!114 &7877528944825014116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,18 +1485,7 @@ MonoBehaviour:
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
   - {fileID: 8300000, guid: 51c638833d006cf46b167c98ec1b6de7, type: 3}
-  - {fileID: 8300000, guid: 93b13415c1689dc4fb15890680e2dd54, type: 3}
-  - {fileID: 8300000, guid: 6f49ede0dd39fed47bebc82d0c3b0cdb, type: 3}
-  - {fileID: 8300000, guid: 102673e2f7317144fb6d50370a9cdaeb, type: 3}
   - {fileID: 8300000, guid: e09be2ec7215d444487c995e10810cdb, type: 3}
-  - {fileID: 8300000, guid: b64a6c99714658a4eb59bcf1dadc76d9, type: 3}
-  - {fileID: 8300000, guid: 070909fb9e702714ea8445aba6fda684, type: 3}
-  - {fileID: 8300000, guid: 993bc8333ce8fb446946078b5dafceff, type: 3}
-  - {fileID: 8300000, guid: cf8d009377cb2dd4496244ee55b3d870, type: 3}
-  - {fileID: 8300000, guid: 5b9af6d7f89cb464c91335a95bf05d54, type: 3}
-  - {fileID: 8300000, guid: 0ea912db9ec4cef4cad0e5a53dd5ce91, type: 3}
-  - {fileID: 8300000, guid: c1b8a7e3281cac949817fd850e8fadf8, type: 3}
-  - {fileID: 8300000, guid: a00086ea5444c1546ad2b7273d9825e6, type: 3}
 --- !u!114 &4829795243325910713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,11 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
-  - {fileID: 8300000, guid: 49bcf8a7707f75047825e3742d7f853a, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
   - {fileID: 8300000, guid: c33d962ebabf6864e8913937af20d0ce, type: 3}
-  - {fileID: 8300000, guid: 630dbfcac11676a4fbfa4915409007ee, type: 3}
 --- !u!1 &4871259571712213648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,7 +1687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5cb1c67272c74a812766fc60cf4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 20
   bulletRange: 100
   maxBullets: 10
   bulletAmount: 5
@@ -1719,8 +1695,12 @@ MonoBehaviour:
   bullets: 0
   rocketExplosionPrefab: {fileID: 0}
   bulletStartPosition: {fileID: 8653777512075287826}
+  sphereRadius: 1
   bulletTrail: {fileID: 1959871352516550012, guid: a731f1b45ff568545909d15397ffd781, type: 3}
   sound: {fileID: 4697895754540708921}
+  raycastHitLayers:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!114 &4697895754540708921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1735,19 +1715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
-  - {fileID: 8300000, guid: 51c638833d006cf46b167c98ec1b6de7, type: 3}
   - {fileID: 8300000, guid: 93b13415c1689dc4fb15890680e2dd54, type: 3}
   - {fileID: 8300000, guid: 6f49ede0dd39fed47bebc82d0c3b0cdb, type: 3}
-  - {fileID: 8300000, guid: 102673e2f7317144fb6d50370a9cdaeb, type: 3}
-  - {fileID: 8300000, guid: e09be2ec7215d444487c995e10810cdb, type: 3}
-  - {fileID: 8300000, guid: b64a6c99714658a4eb59bcf1dadc76d9, type: 3}
-  - {fileID: 8300000, guid: 070909fb9e702714ea8445aba6fda684, type: 3}
-  - {fileID: 8300000, guid: 993bc8333ce8fb446946078b5dafceff, type: 3}
-  - {fileID: 8300000, guid: cf8d009377cb2dd4496244ee55b3d870, type: 3}
-  - {fileID: 8300000, guid: 5b9af6d7f89cb464c91335a95bf05d54, type: 3}
-  - {fileID: 8300000, guid: 0ea912db9ec4cef4cad0e5a53dd5ce91, type: 3}
-  - {fileID: 8300000, guid: c1b8a7e3281cac949817fd850e8fadf8, type: 3}
-  - {fileID: 8300000, guid: a00086ea5444c1546ad2b7273d9825e6, type: 3}
 --- !u!114 &3300410280440258703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,10 +1731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 5586109434810613075}
   m_AudioClip:
-  - {fileID: 8300000, guid: 49bcf8a7707f75047825e3742d7f853a, type: 3}
   - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: e47b51fe505a38c4ba0873188ba38d9f, type: 3}
-  - {fileID: 8300000, guid: c33d962ebabf6864e8913937af20d0ce, type: 3}
   - {fileID: 8300000, guid: 630dbfcac11676a4fbfa4915409007ee, type: 3}
 --- !u!1 &8069275171853510697
 GameObject:

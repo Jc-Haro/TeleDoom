@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GenerateScoreReport : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class GenerateScoreReport : MonoBehaviour
     [SerializeField] Canvas m_GameOverCanvas;
     [SerializeField] EnemyScoreTypeStats[] m_enemyScoreTypeStats;
     public static GenerateScoreReport instance;
+    [SerializeField] HighScoreTable m_HighScoreTable;
+    [SerializeField] GameObject close;
+    [SerializeField] GameObject highClose;
+    static int finalScore = 0;
+
+
 
     private void Awake()
     {
@@ -25,7 +32,9 @@ public class GenerateScoreReport : MonoBehaviour
 
     public void GenerateReport()
     {
-        int finalScore = (int)(ScoreManager.instance.GameTime*100);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        finalScore += (int)(ScoreManager.instance.GameTime*100);
         m_ReportText += "Mission Over\n";
         m_ReportText += "Time survived " + FormatTime(ScoreManager.instance.GameTime)+"\n";
         for(int i = 0; i < m_enemyScoreTypeStats.Length; i++)
@@ -38,9 +47,23 @@ public class GenerateScoreReport : MonoBehaviour
         }
         m_ReportText += "Final Score " + finalScore + "\n";
         m_ReportUI.text = m_ReportText;
-        m_GameOverCanvas.gameObject.SetActive(true);
         m_GameOverCamera.gameObject.SetActive(true);
+        m_GameOverCanvas.gameObject.SetActive(true);
         m_ReportUI.gameObject.SetActive(true);
+
+        if (m_HighScoreTable.IsHighScore(finalScore))
+        {
+            highClose.SetActive(true);
+        }
+        else
+        {
+            close.SetActive(true);
+        }
+    }
+
+    public void CreateScore(string name)
+    {
+        m_HighScoreTable.AddHighScoreEntry(finalScore, name);
     }
 
 

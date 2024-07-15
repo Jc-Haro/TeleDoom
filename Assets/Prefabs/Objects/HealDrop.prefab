@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectParticle: {fileID: 2406970831805686783, guid: 3e27d8e501bc7a14a9eccbaef1947720, type: 3}
   healAmount: 10
+  sound: {fileID: 0}
 --- !u!65 &4682491135395062746
 BoxCollider:
   m_ObjectHideFlags: 0

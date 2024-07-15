@@ -65,6 +65,7 @@ MonoBehaviour:
   collectParticle: {fileID: 2406970831805686783, guid: 83d073b752922ab418bbfe537a682580, type: 3}
   boostDuration: 5
   boostMultiplier: 2
+  sound: {fileID: 0}
 --- !u!65 &5118130196371401868
 BoxCollider:
   m_ObjectHideFlags: 0

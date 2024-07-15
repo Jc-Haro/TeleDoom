@@ -1,11 +1,10 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class DropObject : MonoBehaviour
 {
     [SerializeField] GameObject collectParticle;
+
+
     public abstract void OnCollect();
 
     private void OnTriggerEnter(Collider other)
