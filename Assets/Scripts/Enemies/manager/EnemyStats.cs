@@ -20,13 +20,14 @@ public class EnemyStats : MonoBehaviour
     // get the target
     private void Start()
     {
+        target = PlayerStats.instance.gameObject;
         IsDead = false;
     }
     private void Update()
     {
         if (target == null)
         {
-            Target = GameObject.FindGameObjectWithTag("Player");
+            Target = PlayerStats.instance.gameObject;
         }
         else
         {

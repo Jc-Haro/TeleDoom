@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class DamageGun : MonoBehaviour
@@ -8,13 +9,17 @@ public class DamageGun : MonoBehaviour
     public float bulletRange; 
     public int maxBullets; // The maximum number of bullets in the magazine
     public int bulletAmount; // How many shots are fired at once
+    public bool shotgun;
     [SerializeField] private int bullets; // Current bullets in the magazine
     [SerializeField] public GameObject rocketExplosionPrefab;
     private Transform playerCamera; 
     WeaponSwitcher weaponSwitcher;
     [SerializeField]Transform bulletStartPosition;
+    [SerializeField] float sphereRadius = 1.0f;
     [SerializeField]TrailRenderer bulletTrail;
-  
+    [SerializeField]PlaySound sound;
+    [SerializeField] private LayerMask raycastHitLayers;
+
     void Start()
     {
         playerCamera = Camera.main.transform;
@@ -33,15 +38,19 @@ public class DamageGun : MonoBehaviour
         if (bullets > 0) // Check if there are bullets left
         {
             bullets--;
-
+            sound.PlaySoundOneShot();
             for (int i = 0; i < bulletAmount; i++) // Loop to shoot multiple bullets
             {
                 // We create a little deviation for each bullet with random values on each axis
                 Vector3 deviation = playerCamera.forward;
-                deviation.x += Random.Range(-0.1f, 0.1f); 
-                deviation.y += Random.Range(-0.1f, 0.1f); 
-                deviation.z += Random.Range(-0.1f, 0.1f); 
-                deviation.Normalize(); // Normalize the direction vector
+                if (shotgun)
+                {
+                    deviation.x += Random.Range(-0.1f, 0.1f);
+                    deviation.y += Random.Range(-0.1f, 0.1f);
+                    deviation.z += Random.Range(-0.1f, 0.1f);
+                    deviation.Normalize(); // Normalize the direction vector
+                }
+
 
                 // Create a ray from the camera position in the deviated direction
                 Ray gunRay = new Ray(bulletStartPosition.position, deviation);
@@ -53,7 +62,7 @@ public class DamageGun : MonoBehaviour
 
 
                 // Check if the ray hits something
-                if (Physics.Raycast(gunRay, out RaycastHit hitInfo, bulletRange))
+                if (Physics.SphereCast(gunRay,sphereRadius,out RaycastHit hitInfo, bulletRange, raycastHitLayers))
                 {
                     Debug.Log("La bala golpeó: " + hitInfo.collider.name); 
                     if (GetComponent<Gun>().rocketLauncher)
@@ -68,6 +77,10 @@ public class DamageGun : MonoBehaviour
                         // We apply the damage to the enemy
                         enemy.TakeDamage(damage); 
                         Debug.Log("Daño a enemigo, nueva vida:" + enemy.Life);
+                    }
+                    else
+                    {
+                        Debug.Log("No hay script de vida");
                     }
                 }
                 else
@@ -101,9 +114,10 @@ public class DamageGun : MonoBehaviour
 
     public void GrenadeShoot()
     {
-        if (bullets > 0)
+        if (bullets >= 0)
         {
             bullets--;
+            sound.PlaySoundOneShot();
         }
         else
         {

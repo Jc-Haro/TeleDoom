@@ -1,62 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &502544938431097801
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1771154817927319004}
-  - component: {fileID: 4760174875552755326}
-  m_Layer: 8
-  m_Name: Stats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1771154817927319004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502544938431097801}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6386953084267842302}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4760174875552755326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502544938431097801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6913d05258002141a65d5f073316170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 10
-  speed: 5
-  damage: 10
-  attackSpeed: 1
-  animationDeadTime: 2
-  followingDistance: 100
-  stopDistance: 1
-  actualDistance: 0
-  target: {fileID: 0}
-  hasTarget: 0
-  isDead: 0
-  isAttacking: 0
-  isTank: 0
 --- !u!1 &3713747373747678829
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +11,7 @@ GameObject:
   - component: {fileID: 7976980080239920690}
   - component: {fileID: 4693701999037065017}
   - component: {fileID: 1502495502999281620}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506b212189dcf8e449f77eb94b2d2f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ES: {fileID: 4760174875552755326}
+  ES: {fileID: 0}
   DM: {fileID: 8611013345288849430}
   DManager: {fileID: 5842372652862952044}
 --- !u!1001 &6857216970432163093
@@ -287,9 +230,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1771154817927319004}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7976980080239920690}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
@@ -313,6 +253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5091460377364072840}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5312636956330510288}
   m_SourcePrefab: {fileID: 100100000, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
 --- !u!1 &6046314844631502916 stripped
 GameObject:
@@ -373,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7d4235e765c3c4fa78a4dfc0a89666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ES: {fileID: 4760174875552755326}
+  ES: {fileID: 5312636956330510288}
   DA: {fileID: 1502495502999281620}
   DM: {fileID: 8611013345288849430}
   Anim: {fileID: 6342842373393673515}
@@ -390,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NMAgent: {fileID: 3258565383127295964}
-  ES: {fileID: 4760174875552755326}
+  ES: {fileID: 0}
 --- !u!195 &3258565383127295964
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -443,6 +386,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &5312636956330510288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046314844631502916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6913d05258002141a65d5f073316170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
+  speed: 5
+  damage: -10
+  attackSpeed: 1
+  animationDeadTime: 2
+  followingDistance: 100
+  stopDistance: 1
+  actualDistance: 0
+  target: {fileID: 0}
+  hasTarget: 0
+  isDead: 0
+  isAttacking: 0
+  isTank: 0
 --- !u!4 &6386953084267842302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ce1459d5ab37a8418e84f89c7101ffc, type: 3}
