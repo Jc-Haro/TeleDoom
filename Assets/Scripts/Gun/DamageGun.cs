@@ -16,6 +16,7 @@ public class DamageGun : MonoBehaviour
     [SerializeField]Transform bulletStartPosition;
     [SerializeField]TrailRenderer bulletTrail;
     [SerializeField]PlaySound sound;
+    [SerializeField] LayerMask raycastHitLayers;
 
     void Start()
     {
@@ -74,6 +75,10 @@ public class DamageGun : MonoBehaviour
                         // We apply the damage to the enemy
                         enemy.TakeDamage(damage); 
                         Debug.Log("Daño a enemigo, nueva vida:" + enemy.Life);
+                    }
+                    else
+                    {
+                        Debug.Log("No hay script de vida");
                     }
                 }
                 else

@@ -31,4 +31,13 @@ public class bulletStats : MonoBehaviour
             return lifeTime;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerStats.instance.Shield = damage;
+            Destroy(gameObject);
+        }
+    }
 }

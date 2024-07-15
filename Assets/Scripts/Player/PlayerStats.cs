@@ -59,6 +59,7 @@ public class PlayerStats : MonoBehaviour
                 currentShield + value < maxShield ? currentShield + value : maxShield
                 //If its's damage
                 : ShieldDamage(value);
+            Debug.Log("Damage" + value);
             Debug.Log("healt" + currentHealt);
             Debug.Log("Shield" + currentShield);
         }
@@ -78,9 +79,9 @@ public class PlayerStats : MonoBehaviour
     }
     private float ShieldDamage(float damage)
     {
-        if (damage > currentShield)
+        if ((damage*-1) > currentShield)
         {
-            currentHealt += damage+currentShield;
+            currentHealt += damage-currentShield;
             return 0;
         }
         return damage; 
