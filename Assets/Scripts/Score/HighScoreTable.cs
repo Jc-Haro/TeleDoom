@@ -1,31 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class HighScoreTable : MonoBehaviour
 {
     Transform entryContainer;
     Transform entryTemplate;
     private List<Transform> highScoreEntryTransformList;
-
+    string levelName;
     private void Awake()
+    {
+        levelName = SceneManager.GetActiveScene().name;
+        levelName += "ScoreTable";
+    }
+
+    private void OnEnable()
     {
         entryContainer = transform.Find("EntryContainer");
         entryTemplate = entryContainer.Find("EntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
 
-        string jsonEntry = PlayerPrefs.GetString("HighScoreTable");
-        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
-
+        string jsonEntry = PlayerPrefs.GetString(levelName);
         highScoreEntryTransformList = new List<Transform>();
-        for(int i = 0; i<10; i++)
-        { 
-            CreateHighscoreEntry(highScores.highScoreEntryList[i], entryContainer,highScoreEntryTransformList); 
+        if (jsonEntry == "")
+        {
+            HighScores highScores = new HighScores();
+            for (int i = 0; i < 10; i++)
+            {
+                HighScoreEntry tmpEntry = new HighScoreEntry { score = 0, name = "AAA" };
+                CreateHighscoreEntry(tmpEntry, entryContainer, highScoreEntryTransformList);
+                highScores.highScoreEntryList.Add(tmpEntry);
+            }
+            string jsonList = JsonUtility.ToJson(highScores);
+            PlayerPrefs.SetString(levelName, jsonList);
+            PlayerPrefs.Save();
         }
+        else
+        {
+            HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
 
-        Debug.Log(PlayerPrefs.GetString("HighScoreTable"));
+            for(int i = 0; i<10; i++)
+            { 
+                CreateHighscoreEntry(highScores.highScoreEntryList[i], entryContainer,highScoreEntryTransformList); 
+            }
+
+            Debug.Log(PlayerPrefs.GetString(levelName));            
+        }
 
     }
 
@@ -66,13 +92,13 @@ public class HighScoreTable : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
-    private void AddHighScoreEntry(long score, string name)
+    public void AddHighScoreEntry(long score, string name)
     {
         //Create new high score
         HighScoreEntry entry = new HighScoreEntry { score = score, name = name };
         
         //Load high scores
-        string jsonEntry = PlayerPrefs.GetString("HighScoreTable");
+        string jsonEntry = PlayerPrefs.GetString(levelName);
         HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
 
         //Add new entry
@@ -108,10 +134,34 @@ public class HighScoreTable : MonoBehaviour
 
         //Save high scores
         string jsonList = JsonUtility.ToJson(highScores);
-        PlayerPrefs.SetString("HighScoreTable", jsonList);
+        PlayerPrefs.SetString(levelName, jsonList);
         PlayerPrefs.Save();
     }
 
+    public bool IsHighScore(long score)
+    {
+
+        //Load high scores
+        string jsonEntry = PlayerPrefs.GetString(levelName);
+        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
+
+        //Sort list bubble sort for Angel's win
+        for (int i = 0; i < highScores.highScoreEntryList.Count; i++)
+        {
+            for (int j = i + 1; j < highScores.highScoreEntryList.Count; j++)
+            {
+                if (highScores.highScoreEntryList[j].score > highScores.highScoreEntryList[i].score)
+                {
+                    //Swap
+                    HighScoreEntry tmp = highScores.highScoreEntryList[i];
+                    highScores.highScoreEntryList[i] = highScores.highScoreEntryList[j];
+                    highScores.highScoreEntryList[j] = tmp;
+                }
+            }
+        }
+
+        return (score > highScores.highScoreEntryList.Last().score);
+    }
 
     private class HighScores
     {
