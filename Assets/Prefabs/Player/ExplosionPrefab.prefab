@@ -9803,7 +9803,7 @@ Transform:
   m_GameObject: {fileID: 6784019004430286234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.734858, y: 0.25, z: 43.52544}
+  m_LocalPosition: {x: 9.946005, y: 1, z: 1.2471902}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9895,7 +9895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55870b43bf604a54e8c8b4797d8f26fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 50
 --- !u!82 &3890977267454506974
 AudioSource:
   m_ObjectHideFlags: 0

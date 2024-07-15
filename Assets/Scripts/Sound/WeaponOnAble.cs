@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundOnAble : PlaySound
+public class WeaponOnAble : PlaySound
 {
-    private void OnEnable()
+    public void WeaponAble()
     {
         PlaySoundOneShot();
     }
