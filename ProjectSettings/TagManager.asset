@@ -9,6 +9,7 @@ TagManager:
   - Tp
   - EnemyBullet
   - SniperJumpPoint
+  - Eye
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - EdgeClimbLayer
   - Enemy
   - Player
-  - 
+  - Eye
   - 
   - 
   - 
