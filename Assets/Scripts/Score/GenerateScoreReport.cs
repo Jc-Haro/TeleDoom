@@ -11,8 +11,8 @@ public class GenerateScoreReport : MonoBehaviour
     [SerializeField] EnemyScoreTypeStats[] m_enemyScoreTypeStats;
     public static GenerateScoreReport instance;
     [SerializeField] HighScoreTable m_HighScoreTable;
-    [SerializeField] Button close;
-    [SerializeField] Button highClose;
+    [SerializeField] GameObject close;
+    [SerializeField] GameObject highClose;
     static int finalScore = 0;
 
 
@@ -32,6 +32,8 @@ public class GenerateScoreReport : MonoBehaviour
 
     public void GenerateReport()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         finalScore += (int)(ScoreManager.instance.GameTime*100);
         m_ReportText += "Mission Over\n";
         m_ReportText += "Time survived " + FormatTime(ScoreManager.instance.GameTime)+"\n";
@@ -51,11 +53,11 @@ public class GenerateScoreReport : MonoBehaviour
 
         if (m_HighScoreTable.IsHighScore(finalScore))
         {
-            highClose.gameObject.SetActive(true);
+            highClose.SetActive(true);
         }
         else
         {
-            close.gameObject.SetActive(true);
+            close.SetActive(true);
         }
     }
 

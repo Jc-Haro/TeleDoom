@@ -9,49 +9,50 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class HighScoreTable : MonoBehaviour
 {
-    Transform entryContainer;
-    Transform entryTemplate;
+    [SerializeField] Transform entryContainer;
+    [SerializeField] Transform entryTemplate;
     private List<Transform> highScoreEntryTransformList;
     string levelName;
+    [SerializeField] Transform tableContainer;
     private void Awake()
     {
         levelName = SceneManager.GetActiveScene().name;
         levelName += "ScoreTable";
-    }
-
-    private void OnEnable()
-    {
-        entryContainer = transform.Find("EntryContainer");
-        entryTemplate = entryContainer.Find("EntryTemplate");
-
-        entryTemplate.gameObject.SetActive(false);
-
         string jsonEntry = PlayerPrefs.GetString(levelName);
         highScoreEntryTransformList = new List<Transform>();
+        HighScores highScores;
         if (jsonEntry == "")
         {
-            HighScores highScores = new HighScores();
+            highScores = new HighScores();
             for (int i = 0; i < 10; i++)
             {
-                HighScoreEntry tmpEntry = new HighScoreEntry { score = 0, name = "AAA" };
-                CreateHighscoreEntry(tmpEntry, entryContainer, highScoreEntryTransformList);
+                HighScoreEntry tmpEntry = new HighScoreEntry { score = i, name = "AAA" };
                 highScores.highScoreEntryList.Add(tmpEntry);
             }
             string jsonList = JsonUtility.ToJson(highScores);
             PlayerPrefs.SetString(levelName, jsonList);
             PlayerPrefs.Save();
         }
-        else
-        {
-            HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
 
-            for(int i = 0; i<10; i++)
-            { 
-                CreateHighscoreEntry(highScores.highScoreEntryList[i], entryContainer,highScoreEntryTransformList); 
-            }
 
-            Debug.Log(PlayerPrefs.GetString(levelName));            
+        entryTemplate.gameObject.SetActive(false);
+
+    }
+
+    public void GenerateTable()
+    {
+
+        string jsonEntry = PlayerPrefs.GetString(levelName);
+        highScoreEntryTransformList = new List<Transform>();
+        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
+
+        for(int i = 0; i<10; i++)
+        { 
+            CreateHighscoreEntry(highScores.highScoreEntryList[i], entryContainer,highScoreEntryTransformList); 
         }
+
+        Debug.Log(PlayerPrefs.GetString(levelName));            
+       
 
     }
 
