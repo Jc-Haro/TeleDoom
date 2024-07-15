@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EM: {fileID: 1748126472027859057}
-  ES: {fileID: 0}
+  ES: {fileID: 7587939545436542446}
   NMM: {fileID: 4956483187364329842}
   indexTime: 0
 --- !u!1001 &6640648374832337756
@@ -96,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 382e1fdc13ab0ae45bcfe4cb2256bf4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EM: {fileID: 1748126472027859057}
-  ES: {fileID: 0}
+  ES: {fileID: 7587939545436542446}
   indexTime: 2
   mindcooldown: 2
 --- !u!195 &3679860856726055148
