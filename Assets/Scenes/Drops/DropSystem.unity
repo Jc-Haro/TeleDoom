@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -728,8 +728,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 595394032}
         m_TargetAssemblyTypeName: GameOverOptions, Assembly-CSharp
-        m_MethodName: Home
-        m_Mode: 5
+        m_MethodName: Quit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2287,14 +2287,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 595394032}
         m_TargetAssemblyTypeName: GameOverOptions, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
+        m_MethodName: Home
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu_UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &877063009
@@ -2958,10 +2958,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playerprefab
       objectReference: {fileID: 0}
-    - target: {fileID: 399436109876687049, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4150455290640710015, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3001,10 +2997,6 @@ PrefabInstance:
     - target: {fileID: 4150455290640710015, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249400199459806452, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
