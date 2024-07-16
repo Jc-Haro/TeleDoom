@@ -43,9 +43,9 @@ public class PlayerStats : MonoBehaviour
         set 
         { 
             currentHealt = currentHealt + value < maxHealth ? currentHealt + value : maxHealth;
-            if(currentHealt < 0)
+            if(currentHealt <= 0)
             {
-                //TODO play death animation
+                Destroy(gameObject);
             }
         } 
     }
@@ -81,7 +81,7 @@ public class PlayerStats : MonoBehaviour
     {
         if ((damage*-1) > currentShield)
         {
-            currentHealt += damage-currentShield;
+            Healt = (damage-currentShield);
             return 0;
         }
         return damage; 
