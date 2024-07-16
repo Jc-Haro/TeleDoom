@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
 {
     public UnityEvent onGunshot;
     public float fireRate;
-    public bool automatic;
+    public bool semiautomatic;
     public bool grenadeLauncher;
     public bool rocketLauncher;
     public float currentFireRate;
@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
 
-        if (automatic)
+        if (semiautomatic)
         {
             // this instance makes it so that the event will repeat again as long as the button is still pressed
             if (InputManager.instance.Shoot)

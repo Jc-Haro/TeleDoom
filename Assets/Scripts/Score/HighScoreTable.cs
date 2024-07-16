@@ -1,11 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class HighScoreTable : MonoBehaviour
 {
@@ -20,20 +16,21 @@ public class HighScoreTable : MonoBehaviour
         levelName += "ScoreTable";
         string jsonEntry = PlayerPrefs.GetString(levelName);
         highScoreEntryTransformList = new List<Transform>();
-        HighScores highScores;
-        if (jsonEntry == "")
+        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
+        //If there is no level highscore table we create it
+        if (highScores.highScoreEntryList.Count == 0)
         {
-            highScores = new HighScores();
+            highScores.highScoreEntryList = new List<HighScoreEntry>();
             for (int i = 0; i < 10; i++)
             {
-                HighScoreEntry tmpEntry = new HighScoreEntry { score = i, name = "AAA" };
+                HighScoreEntry tmpEntry = new HighScoreEntry { score = i*1000, name = "AAA" };
                 highScores.highScoreEntryList.Add(tmpEntry);
             }
             string jsonList = JsonUtility.ToJson(highScores);
             PlayerPrefs.SetString(levelName, jsonList);
             PlayerPrefs.Save();
+            Debug.Log(PlayerPrefs.GetString(levelName));
         }
-
 
         entryTemplate.gameObject.SetActive(false);
 
@@ -160,8 +157,9 @@ public class HighScoreTable : MonoBehaviour
                 }
             }
         }
-
-        return (score > highScores.highScoreEntryList.Last().score);
+        int index = highScores.highScoreEntryList.Count - 1;
+        Debug.Log(highScores.highScoreEntryList);
+        return (score > highScores.highScoreEntryList[index].score);
     }
 
     private class HighScores
