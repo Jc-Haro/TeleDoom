@@ -9786,7 +9786,7 @@ GameObject:
   - component: {fileID: 8469750744822334539}
   - component: {fileID: 2132178327408332870}
   - component: {fileID: 3890977267454506974}
-  - component: {fileID: 7000283845340520461}
+  - component: {fileID: 1239626455470785781}
   m_Layer: 0
   m_Name: ExplosionPrefab
   m_TagString: Untagged
@@ -9803,7 +9803,7 @@ Transform:
   m_GameObject: {fileID: 6784019004430286234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2242832, y: -27.722618, z: 24.863256}
+  m_LocalPosition: {x: 0.4358265, y: 0.25000295, z: 34.04717}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9992,7 +9992,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7000283845340520461
+--- !u!114 &1239626455470785781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10001,7 +10001,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6784019004430286234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e8e1451cf8bc9479bccffcac10c928, type: 3}
+  m_Script: {fileID: 11500000, guid: b4b2036a3ea9ed84b8c06d2b73d8e7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 3890977267454506974}
