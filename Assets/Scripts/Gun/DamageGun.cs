@@ -19,6 +19,7 @@ public class DamageGun : MonoBehaviour
     [SerializeField]TrailRenderer bulletTrail;
     [SerializeField]PlaySound sound;
     [SerializeField] private LayerMask raycastHitLayers;
+    [SerializeField] GameObject impactParticles;
 
     void Start()
     {
@@ -64,7 +65,8 @@ public class DamageGun : MonoBehaviour
                 // Check if the ray hits something
                 if (Physics.SphereCast(gunRay,sphereRadius,out RaycastHit hitInfo, bulletRange, raycastHitLayers))
                 {
-                    Debug.Log("La bala golpeó: " + hitInfo.collider.name); 
+                    Debug.Log("La bala golpeó: " + hitInfo.collider.name);
+                    Instantiate(impactParticles, hitInfo.point, impactParticles.transform.rotation);
                     if (GetComponent<Gun>().rocketLauncher)
                     {
                         rocketExplosionPrefab.transform.position = hitInfo.point;
