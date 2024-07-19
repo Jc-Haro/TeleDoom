@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class GravityProjectile : MonoBehaviour
 {
     Camera playerCamera;
     [SerializeField] float granadeSpeed;
+    [SerializeField] GameObject grenadeDamagePrefab;
     [SerializeField] GameObject granadePefab;
     [SerializeField] GameObject crossHair;
     bool isReady;
@@ -43,10 +45,17 @@ public class GravityProjectile : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject granadeInstance = (GameObject)Instantiate(granadePefab, playerCamera.transform.position, granadePefab.transform.rotation);
-        Vector3 rotation = crossHair.transform.position - playerCamera.transform.position;
-        granadeInstance.GetComponent<Rigidbody>().AddForce(rotation.normalized * granadeSpeed, ForceMode.Impulse);
+        if(GetComponentInChildren<Gun>().grenadeLauncher && InputManager.instance.Shoot)
+        {
+            GameObject granadeInstance = (GameObject)Instantiate(grenadeDamagePrefab, playerCamera.transform.position, grenadeDamagePrefab.transform.rotation);
+            Vector3 rotation = crossHair.transform.position - playerCamera.transform.position;
+            granadeInstance.GetComponent<Rigidbody>().AddForce(rotation.normalized * granadeSpeed * 5, ForceMode.Impulse);
+        }
+        else
+        {
+            GameObject granadeInstance = (GameObject)Instantiate(granadePefab, playerCamera.transform.position, granadePefab.transform.rotation);
+            Vector3 rotation = crossHair.transform.position - playerCamera.transform.position;
+            granadeInstance.GetComponent<Rigidbody>().AddForce(rotation.normalized * granadeSpeed, ForceMode.Impulse);
+        }
     }
-
-
 }

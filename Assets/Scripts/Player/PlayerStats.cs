@@ -43,9 +43,9 @@ public class PlayerStats : MonoBehaviour
         set 
         { 
             currentHealt = currentHealt + value < maxHealth ? currentHealt + value : maxHealth;
-            if(currentHealt < 0)
+            if(currentHealt <= 0)
             {
-                //TODO play death animation
+                Destroy(gameObject);
             }
         } 
     }
@@ -59,8 +59,9 @@ public class PlayerStats : MonoBehaviour
                 currentShield + value < maxShield ? currentShield + value : maxShield
                 //If its's damage
                 : ShieldDamage(value);
-            Debug.Log(currentHealt);
-            Debug.Log(currentShield);
+            Debug.Log("Damage" + value);
+            Debug.Log("healt" + currentHealt);
+            Debug.Log("Shield" + currentShield);
         }
             
     }
@@ -78,9 +79,9 @@ public class PlayerStats : MonoBehaviour
     }
     private float ShieldDamage(float damage)
     {
-        if (damage > currentShield)
+        if ((damage*-1) > currentShield)
         {
-            currentHealt += damage+currentShield;
+            Healt = (damage-currentShield);
             return 0;
         }
         return damage; 

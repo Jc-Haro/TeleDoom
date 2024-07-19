@@ -1,41 +1,77 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    public List<GameObject> weapons; // Lista de GameObjects de las armas
-    private int lastIndex; // Índice del último objeto seleccionado, privado para no ser modificado externamente
+    public static WeaponSwitcher instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    [Serializable]
+    public struct Weapon
+    {
+        public GameObject weapon;
+        public Transform bulletStart;
+    }
+    public List<Weapon> weapons;
+    public int lastIndex;
+    public bool hasRocketLauncher = false;
 
     void Start()
     {
-        // Desactiva todas las armas al inicio
+        // First deactivates all weapons, just in case
         foreach (var weapon in weapons)
         {
-            weapon.SetActive(false);
+            weapon.weapon.SetActive(false);
         }
 
-        // Activa una arma aleatoria al inicio
-        lastIndex = Random.Range(0, weapons.Count);
-        weapons[lastIndex].SetActive(true);
+        // Activates a random weapon
+        lastIndex = UnityEngine.Random.Range(0, weapons.Count);
+        if (weapons[lastIndex].weapon == weapons[4].weapon && !hasRocketLauncher)
+            GetRandomWeapon();
+        else
+        {
+            weapons[lastIndex].weapon.SetActive(true);
+            weapons[lastIndex].weapon.GetComponent<WeaponOnAble>().WeaponAble();
+        }
     }
 
-    // Función para elegir un objeto aleatoriamente sin repetir el último
+    // Function to get a new random weapon, without repeating the last one
     public void GetRandomWeapon()
     {
-        // Desactiva el arma actual
-        weapons[lastIndex].SetActive(false);
+        weapons[4].weapon.SetActive(false);
+        hasRocketLauncher = false;
+
+        // Current weapon gets deactivated
+        weapons[lastIndex].weapon.SetActive(false);
 
         int newIndex;
 
-        // Encuentra un nuevo índice aleatorio diferente del último
+        // Creates a new index for the new weapon, if its the same as the current weapon it will create a new one until its different
         do
         {
-            newIndex = Random.Range(0, weapons.Count);
+            newIndex = UnityEngine.Random.Range(0, weapons.Count);
         } while (newIndex == lastIndex);
 
-        // Actualiza el índice y activa la nueva arma
+        // The weapon index copies the new index and activates that weapon
         lastIndex = newIndex;
-        weapons[lastIndex].SetActive(true);
+        weapons[lastIndex].weapon.SetActive(true);
+        weapons[lastIndex].weapon.GetComponent<WeaponOnAble>().WeaponAble();
+        Debug.Log("new weapon: " + lastIndex);
+
+        if(weapons[4].weapon.activeSelf && !hasRocketLauncher)
+        {
+            GetRandomWeapon();
+        }
     }
 }

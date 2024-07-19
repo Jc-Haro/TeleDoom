@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     public bool JumpMantle { get; private set; }
     public bool ShootReactivateTP { get; private set; }
     public bool Shoot { get; private set; }
+    public bool AutomaticShoot { get; private set; }
 
     //Input actions
     private InputAction movement;
@@ -47,6 +48,7 @@ public class InputManager : MonoBehaviour
         Camera = cameraMovement.ReadValue<Vector2>();
         JumpMantle = jumpMante.WasPressedThisFrame();
         ShootReactivateTP = shootreactivateTP.WasPressedThisFrame();
-        Shoot = shoot.IsPressed();
+        Shoot = shoot.WasPressedThisFrame();
+        AutomaticShoot = shoot.IsPressed();
     }
 }

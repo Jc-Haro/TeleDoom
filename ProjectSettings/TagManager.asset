@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Map
   - Tp
+  - EnemyBullet
+  - SniperJumpPoint
+  - Eye
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - UI
   - Wall
   - EdgeClimbLayer
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Eye
   - 
   - 
   - 
