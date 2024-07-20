@@ -75,7 +75,7 @@ public class EnemyMovement : MonoBehaviour
     IEnumerator Dead()
     {
         EditAnimator(4);
-        yield return new WaitForSeconds(10F);
+        yield return new WaitForSeconds(2F);
         if (ES.IsTank)
         {
             Instantiate(heat);
