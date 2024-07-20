@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DroneManager : MonoBehaviour
@@ -46,7 +45,7 @@ public class DroneManager : MonoBehaviour
     IEnumerator DeathManager()
     {
         AnimManager(4);
-        yield return new WaitForSeconds(ES.DeadAnimationTime);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
 }
