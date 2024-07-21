@@ -9,7 +9,6 @@ public class DroneAttack : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("toca al jugador");
             ES.IsAttacking = true;
             DManager.AnimManager(3);
         }
@@ -19,7 +18,6 @@ public class DroneAttack : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("no toca al jugador");
             ES.IsAttacking = false;
             DManager.AnimManager(0);
         }
