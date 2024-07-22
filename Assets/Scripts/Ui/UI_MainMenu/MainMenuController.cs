@@ -10,10 +10,6 @@ public class MainMenuController : MonoBehaviour
     public GameObject credits;
     public Animator CameraObject;
 
-    private void Start()
-    {
-             
-    }
     public void StartGame(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
