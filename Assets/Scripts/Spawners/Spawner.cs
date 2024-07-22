@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Spawner : MonoBehaviour
 {
@@ -11,7 +12,11 @@ public class Spawner : MonoBehaviour
     
 
     [SerializeField] GameObject[] enemiesPool;
-
+    [SerializeField] private GameObject player;
+    private void Start()
+    {
+        player = PlayerStats.instance.gameObject;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -41,10 +46,13 @@ public class Spawner : MonoBehaviour
 
     float TimeIncrement()
     {
-        float distance = Vector3.Distance(transform.position,PlayerStats.instance.transform.position);
-        if (distance < detectionDistance)
+        if(player != null)
         {
-            return Time.deltaTime;
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            if (distance < detectionDistance)
+            {
+                return Time.deltaTime;
+            }
         }
         return 0;
     }
