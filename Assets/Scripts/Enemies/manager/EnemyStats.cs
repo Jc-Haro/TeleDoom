@@ -27,7 +27,10 @@ public class EnemyStats : MonoBehaviour
     {
         if (target == null)
         {
-            Target = PlayerStats.instance.gameObject;
+            if(PlayerStats.instance != null)
+            {
+                Target = PlayerStats.instance.gameObject;
+            }   
         }
         else
         {
