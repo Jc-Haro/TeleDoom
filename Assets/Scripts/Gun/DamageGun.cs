@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DamageGun : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class DamageGun : MonoBehaviour
     public int maxBullets; // The maximum number of bullets in the magazine
     public int bulletAmount; // How many shots are fired at once
     public bool shotgun;
+
+    public WeaponsSystemUI weaponsSystemUI;
+
+    public Sprite icon; 
     [SerializeField] private int bullets; // Current bullets in the magazine
     [SerializeField] public GameObject rocketExplosionPrefab;
     private Transform playerCamera; 
@@ -38,7 +44,9 @@ public class DamageGun : MonoBehaviour
     {
         if (bullets > 0) // Check if there are bullets left
         {
+            weaponsSystemUI.IconUI(icon);
             bullets--;
+            weaponsSystemUI.BulletsUI(bullets);
             sound.PlaySoundOneShot();
             for (int i = 0; i < bulletAmount; i++) // Loop to shoot multiple bullets
             {
@@ -65,7 +73,7 @@ public class DamageGun : MonoBehaviour
                 // Check if the ray hits something
                 if (Physics.SphereCast(gunRay,sphereRadius,out RaycastHit hitInfo, bulletRange, raycastHitLayers))
                 {
-                    Debug.Log("La bala golpeó: " + hitInfo.collider.name);
+                    Debug.Log("La bala golpeï¿½: " + hitInfo.collider.name);
                     Instantiate(impactParticles, hitInfo.point, impactParticles.transform.rotation);
                     if (GetComponent<Gun>().rocketLauncher)
                     {
@@ -78,7 +86,7 @@ public class DamageGun : MonoBehaviour
                     {
                         // We apply the damage to the enemy
                         enemy.TakeDamage(damage); 
-                        Debug.Log("Daño a enemigo, nueva vida:" + enemy.Life);
+                        Debug.Log("Daï¿½o a enemigo, nueva vida:" + enemy.Life);
                     }
                     else
                     {
@@ -87,7 +95,7 @@ public class DamageGun : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("No se disparó a nada");
+                    Debug.Log("No se disparï¿½ a nada");
                 }
             }
         }
@@ -118,7 +126,9 @@ public class DamageGun : MonoBehaviour
     {
         if (bullets >= 0)
         {
+            weaponsSystemUI.IconUI(icon);
             bullets--;
+            weaponsSystemUI.BulletsUI(bullets);
             sound.PlaySoundOneShot();
         }
         else

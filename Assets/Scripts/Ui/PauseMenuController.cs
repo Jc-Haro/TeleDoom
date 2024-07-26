@@ -8,33 +8,59 @@ public class PauseMenuController : MonoBehaviour
 {
 
     public GameObject settings;
-    public GameObject Pause;
+    public GameObject pause;
+
+    public KeyCode keyOn = KeyCode.Q;
 
     public Button buttonSettings;
     public Button buttonPause;
 
+    private void Update()
+    {
+          if (Input.GetKeyDown(keyOn))
+        {
+            if (pause != null)
+            {
+                pause.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+    }
+
+    public void Resume(){
+        Time.timeScale = 1f;
+        pause.SetActive(false);
+    }
+
     public void Restart(string sceneName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
     public void MainMenu(string sceneName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
     public void SettingsOn(){
-        ObjectOnOff(Pause, settings, buttonSettings);
+        ObjectOnOff(pause, settings, buttonSettings);
 	}
 
     public void SettingsOff(){
-        ObjectOnOff(settings, Pause, buttonPause);
+        ObjectOnOff(settings, pause, buttonPause);
 	}
 
-     public void ObjectOnOff(GameObject obon1, GameObject obon2, Button button){
+    public void ObjectOnOff(GameObject obon1, GameObject obon2, Button button){
         obon2.SetActive(true);
         obon1.SetActive(false);
         button.Select();
+    }
+
+    public void ObjectOnOffUI(GameObject obon1, GameObject obon2){
+        obon2.SetActive(true);
+        obon1.SetActive(false);
     }
 
     public void ExitGame()
