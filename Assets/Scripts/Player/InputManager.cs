@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public bool ShootReactivateTP { get; private set; }
     public bool Shoot { get; private set; }
     public bool AutomaticShoot { get; private set; }
+    public bool Pause {  get; private set; }
 
     //Input actions
     private InputAction movement;
@@ -22,6 +23,7 @@ public class InputManager : MonoBehaviour
     private InputAction jumpMante;
     private InputAction shootreactivateTP;
     private InputAction shoot;
+    private InputAction pause;
 
     private void Awake()
     {
@@ -41,6 +43,8 @@ public class InputManager : MonoBehaviour
         jumpMante = playerInput.actions["JumpMantle"];
         shootreactivateTP = playerInput.actions["ShootReactivateTP"];
         shoot = playerInput.actions["Shoot"];
+        pause = playerInput.actions["Pause"];
+
     }
     void Update()
     {
@@ -50,5 +54,6 @@ public class InputManager : MonoBehaviour
         ShootReactivateTP = shootreactivateTP.WasPressedThisFrame();
         Shoot = shoot.WasPressedThisFrame();
         AutomaticShoot = shoot.IsPressed();
+        Pause = pause.WasPressedThisFrame();
     }
 }
