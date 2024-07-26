@@ -2186,6 +2186,7 @@ GameObject:
   - component: {fileID: 174568828}
   - component: {fileID: 174568831}
   - component: {fileID: 174568830}
+  - component: {fileID: 174568832}
   m_Layer: 5
   m_Name: ControllerPanel
   m_TagString: Untagged
@@ -2282,6 +2283,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputActions: {fileID: -944628639613478452, guid: 445c46474ed1d3f4791d7224f19f5b35, type: 3}
   _targetControlScheme: ControlScheme
+--- !u!114 &174568832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174568825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cd9b84e0604a9abafb77712f1df90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xbox:
+    buttonSouth: {fileID: 21300000, guid: 247d235c35343714ebff14dce11af853, type: 3}
+    buttonNorth: {fileID: 21300000, guid: f5fb37f1a7b88eb49a430235f15ef7e2, type: 3}
+    buttonEast: {fileID: 21300000, guid: 2d5b2167a1deacd429b5b99566da4288, type: 3}
+    buttonWest: {fileID: 21300000, guid: dd591b895a8666045a6ef1b28f716c15, type: 3}
+    startButton: {fileID: 21300000, guid: 077959324a43d62469bd321452427b41, type: 3}
+    selectButton: {fileID: 21300000, guid: 1d70314b9056a714392dabe8e8219623, type: 3}
+    leftTrigger: {fileID: 21300000, guid: 7bc65266e97824a4a9725fbe212ba093, type: 3}
+    rightTrigger: {fileID: 21300000, guid: 3c9b4cb9d98a5724b829e7cf94c67cc2, type: 3}
+    leftShoulder: {fileID: 21300000, guid: 61f30ae96d235ff46ad19889fba74676, type: 3}
+    rightShoulder: {fileID: 21300000, guid: e07f097842f1366478faf601a44dedf5, type: 3}
+    dpad: {fileID: 21300000, guid: 971a45fd31766384ab3364e7560d5301, type: 3}
+    dpadUp: {fileID: 21300000, guid: 229a9b1bc97151a4a81b4411ccece4ba, type: 3}
+    dpadDown: {fileID: 21300000, guid: 08bcc939e6983ad49a750ca8bea0d44c, type: 3}
+    dpadLeft: {fileID: 21300000, guid: b0fdcbd5f88ad0f4a997c47f0627e6d1, type: 3}
+    dpadRight: {fileID: 21300000, guid: 0c854de6387ee9742a3d516bca9388a2, type: 3}
+    leftStick: {fileID: 21300000, guid: 1ac9ff007e50c604c966d82a157c55fa, type: 3}
+    rightStick: {fileID: 21300000, guid: 405c3a13e32e96d4d97a2c0ae1e9b41c, type: 3}
+    leftStickPress: {fileID: 21300000, guid: 8d6a34f443a2ced4bb5d8f85baf28238, type: 3}
+    rightStickPress: {fileID: 21300000, guid: beb45212729c13c439ca5a7e452e7f38, type: 3}
+  ps4:
+    buttonSouth: {fileID: 21300000, guid: fa123f7f2700e8f47a419881e1afe819, type: 3}
+    buttonNorth: {fileID: 21300000, guid: c96568698eb66f6428d088563a23fc0b, type: 3}
+    buttonEast: {fileID: 21300000, guid: 052e1810335772b43b9cce0de29cfa4d, type: 3}
+    buttonWest: {fileID: 21300000, guid: 83e1f29a913309b47b3e5b6bb0a3778e, type: 3}
+    startButton: {fileID: 21300000, guid: 3aad0cae09f9ea44aab22f1b41714589, type: 3}
+    selectButton: {fileID: 21300000, guid: 099d664fbb299e9449334cfff874691d, type: 3}
+    leftTrigger: {fileID: 21300000, guid: 05e63f0efcc6e224cab7f4025b28f823, type: 3}
+    rightTrigger: {fileID: 21300000, guid: 71bca9f47053cb34a9cfece9542693b6, type: 3}
+    leftShoulder: {fileID: 21300000, guid: 5601af52d9bfd404a865765c95e7cc5a, type: 3}
+    rightShoulder: {fileID: 21300000, guid: 75583ec829367b645979c5cab3da6d20, type: 3}
+    dpad: {fileID: 21300000, guid: 8149c4e75535aaa47a0bf481022b77bb, type: 3}
+    dpadUp: {fileID: 21300000, guid: c760cba2fd787fe41a527edb91855d81, type: 3}
+    dpadDown: {fileID: 21300000, guid: 597ac43b8972348429a22dd9b1180c5d, type: 3}
+    dpadLeft: {fileID: 21300000, guid: 4c49ab46b8fadc440be9310559bc514a, type: 3}
+    dpadRight: {fileID: 21300000, guid: 328867a67c517e74a8ffe1758ea894d4, type: 3}
+    leftStick: {fileID: 21300000, guid: c01410be371c71c46be9acb64b52d4cd, type: 3}
+    rightStick: {fileID: 21300000, guid: 52998e64167724343bea7ffec077f6cf, type: 3}
+    leftStickPress: {fileID: 21300000, guid: b8186ea79a924fe4f8c8f5024f1af72f, type: 3}
+    rightStickPress: {fileID: 21300000, guid: 2f4b9304882c5684db9a5533634f67c0, type: 3}
+  basicGamepad:
+    buttonSouth: {fileID: 21300000, guid: 5739bebec56bf7743a5260292aae78aa, type: 3}
+    buttonNorth: {fileID: 21300000, guid: 3a41cf96dba150e42929255d2db7effd, type: 3}
+    buttonEast: {fileID: 21300000, guid: 2cdfb461049673e408975d7c9fcda873, type: 3}
+    buttonWest: {fileID: 21300000, guid: ffa01086538dd594290a2747a8594097, type: 3}
+    startButton: {fileID: 21300000, guid: 13d99781ed152b5409852d4b3345da15, type: 3}
+    selectButton: {fileID: 21300000, guid: 0dfcf9c29ce6fc140a98bc7c06a66dfa, type: 3}
+    leftTrigger: {fileID: 21300000, guid: 8521fb91e247bf5488f17a534217d9a4, type: 3}
+    rightTrigger: {fileID: 21300000, guid: 41f235ef8ae79944b8873061f14df8dd, type: 3}
+    leftShoulder: {fileID: 21300000, guid: 06b464a601593e94c9da2e0a84183c56, type: 3}
+    rightShoulder: {fileID: 21300000, guid: 1f948286a8d75934f8d9aad1d8619103, type: 3}
+    dpad: {fileID: 21300000, guid: 5a9293361ffb0944ab3a75f21a2d4981, type: 3}
+    dpadUp: {fileID: 21300000, guid: e4dca9a0eddfb6c4687eaf5ce0da161e, type: 3}
+    dpadDown: {fileID: 21300000, guid: 405621650e5f7f74296f190620277bc5, type: 3}
+    dpadLeft: {fileID: 21300000, guid: 22281ce326c218e439b1feb710f4deef, type: 3}
+    dpadRight: {fileID: 21300000, guid: 359b4fa2b96db2347a8d87c11f7b8201, type: 3}
+    leftStick: {fileID: 21300000, guid: 35af62897d6d1e449bbcc738d029c121, type: 3}
+    rightStick: {fileID: 21300000, guid: 383e61d1fd12c1e46854c1f05d3ae110, type: 3}
+    leftStickPress: {fileID: 21300000, guid: 202fa4e3fcdfb024da0ff3ddcbbda58f, type: 3}
+    rightStickPress: {fileID: 21300000, guid: 8038e2c3a923b3b4b89e9e47aabcc823, type: 3}
 --- !u!1 &176386900
 GameObject:
   m_ObjectHideFlags: 0
