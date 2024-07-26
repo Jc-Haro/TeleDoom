@@ -5,6 +5,10 @@ public class PlayerStats : MonoBehaviour
 {
     #region Singletone 
     public static PlayerStats instance;
+
+    public Animator anim;
+
+    public WeaponsSystemUI weaponsSystemUI;
     private void Awake()
     {
         if (instance == null)
@@ -32,7 +36,9 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         currentHealt = maxHealth;
+        weaponsSystemUI.MaxLifePlayer(maxHealth);
         currentShield = maxShield;
+        weaponsSystemUI.MaxShieldPlayer(maxShield);
     }
     #endregion
 
@@ -68,6 +74,7 @@ public class PlayerStats : MonoBehaviour
     public void SpeedBoost(float multiplier, float duration)
     {
         speedBooster = multiplier;
+        anim.SetFloat("Booster", speedBooster);
         StopCoroutine(StopSpeedBoost(duration));
         StartCoroutine(StopSpeedBoost(duration));
 
@@ -76,6 +83,7 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         speedBooster = 0;
+        anim.SetFloat("Booster", speedBooster);
     }
     private float ShieldDamage(float damage)
     {
