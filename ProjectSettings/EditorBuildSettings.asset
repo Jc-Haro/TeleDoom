@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GeneralUI/PauseButton/PauseButton.unity
     guid: 4a644e148a0b0534c9d7aac463293ed5
+  - enabled: 1
+    path: Assets/Scenes/Preliminar Scenes/EnemyAndPlater.unity
+    guid: 7821c7035e189c142ba6e9906de83911
   m_configObjects: {}

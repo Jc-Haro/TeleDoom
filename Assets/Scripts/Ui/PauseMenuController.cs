@@ -10,17 +10,18 @@ public class PauseMenuController : MonoBehaviour
     public GameObject settings;
     public GameObject pause;
 
-    public KeyCode keyOn = KeyCode.Q;
 
     public Button buttonSettings;
     public Button buttonPause;
 
     private void Update()
     {
-          if (Input.GetKeyDown(keyOn))
+        if (InputManager.instance.Pause)
         {
             if (pause != null)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 buttonPause.Select();
                 pause.SetActive(true);
                 Time.timeScale = 0f;

@@ -11279,7 +11279,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 6673018767184221429}
   pause: {fileID: 6397204678783365454}
-  keyOn: 113
   buttonSettings: {fileID: 2676689994056595417}
   buttonPause: {fileID: 8724436674519256287}
 --- !u!114 &2501529826640945636
@@ -12758,7 +12757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8361106521961703382, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_text
-      value: Barra Espaciadora
+      value: Space
       objectReference: {fileID: 0}
     - target: {fileID: 8361106521961703382, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_fontSize
