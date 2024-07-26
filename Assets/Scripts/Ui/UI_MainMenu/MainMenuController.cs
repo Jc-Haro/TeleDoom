@@ -16,6 +16,8 @@ public class MainMenuController : MonoBehaviour
 
     public Button buttonMenu;
 
+    public Button menuLevel;
+
     public Animator CameraObject;
 
     public void StartGame(string sceneName)
@@ -58,6 +60,14 @@ public class MainMenuController : MonoBehaviour
     	CameraObject.SetFloat("Credits 0",0);
         ObjectOnOff(credits, mainMenu, buttonMenu);
 	}
+
+    public void SelectMenu(){
+        menuLevel.Select();
+    }
+
+    public void SelectMenuMian(){
+        buttonMenu.Select();
+    }
 
     private IEnumerator TimeAndDelay()
     {

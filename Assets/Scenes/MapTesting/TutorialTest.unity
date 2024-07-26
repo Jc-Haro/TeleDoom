@@ -22491,6 +22491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playerprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2699811021806972105, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: weaponsSystemUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4150455290640710015, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -102.23
@@ -22530,6 +22534,26 @@ PrefabInstance:
     - target: {fileID: 4150455290640710015, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436349886437588128, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: weaponsSystemUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158504191080813907, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: weaponsSystemUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724489037196608741, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: weaponsSystemUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252049107514329035, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: weaponsSystemUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618283345306955300, guid: 283cd8f70be256644b2387e84cb18adb, type: 3}
+      propertyPath: weaponsSystemUI
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

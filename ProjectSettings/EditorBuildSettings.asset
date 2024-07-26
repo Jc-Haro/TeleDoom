@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GeneralUI/MainMenu/MainMenu_UI.unity
     guid: 209d6b9de18cfd3459b8abb19c3f4701
   - enabled: 1
+    path: Assets/Scenes/MapTesting/TutorialTest.unity
+    guid: 963e2ae485ad8da468d46d3325267765
+  - enabled: 1
     path: Assets/Scenes/MapTesting/MainMap.unity
     guid: 774bd42163bbbae4e9e0df38bc691dcc
   - enabled: 1
