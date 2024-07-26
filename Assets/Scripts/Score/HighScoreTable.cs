@@ -16,22 +16,22 @@ public class HighScoreTable : MonoBehaviour
         levelName += "ScoreTable";
         string jsonEntry = PlayerPrefs.GetString(levelName);
         highScoreEntryTransformList = new List<Transform>();
-        HighScores highScores = JsonUtility.FromJson<HighScores>(jsonEntry);
-        //If there is no level highscore table we create it
-        if (highScores.highScoreEntryList.Count == 0)
+        HighScores highScores = new HighScores();
+        if (jsonEntry == "")
         {
+            PlayerPrefs.SetString(jsonEntry, "");
             highScores.highScoreEntryList = new List<HighScoreEntry>();
             for (int i = 0; i < 10; i++)
             {
-                HighScoreEntry tmpEntry = new HighScoreEntry { score = i*1000, name = "AAA" };
+                HighScoreEntry tmpEntry = new HighScoreEntry { score = i * 1000, name = "AAA" };
                 highScores.highScoreEntryList.Add(tmpEntry);
             }
             string jsonList = JsonUtility.ToJson(highScores);
             PlayerPrefs.SetString(levelName, jsonList);
             PlayerPrefs.Save();
-            Debug.Log(PlayerPrefs.GetString(levelName));
         }
 
+        Debug.Log(PlayerPrefs.GetString(levelName));
         entryTemplate.gameObject.SetActive(false);
 
     }
