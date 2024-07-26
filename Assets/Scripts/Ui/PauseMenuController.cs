@@ -21,6 +21,7 @@ public class PauseMenuController : MonoBehaviour
         {
             if (pause != null)
             {
+                buttonPause.Select();
                 pause.SetActive(true);
                 Time.timeScale = 0f;
             }
@@ -32,10 +33,10 @@ public class PauseMenuController : MonoBehaviour
         pause.SetActive(false);
     }
 
-    public void Restart(string sceneName)
+    public void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void MainMenu(string sceneName)
