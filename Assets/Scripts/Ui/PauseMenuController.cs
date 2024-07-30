@@ -9,7 +9,9 @@ public class PauseMenuController : MonoBehaviour
 
     public GameObject settings;
     public GameObject pause;
+    bool isPaused;
 
+    [SerializeField] GameObject settingsCanvas;
 
     public Button buttonSettings;
     public Button buttonPause;
@@ -18,7 +20,8 @@ public class PauseMenuController : MonoBehaviour
     {
         if (InputManager.instance.Pause)
         {
-            if (pause != null)
+            isPaused = !isPaused;
+            if (isPaused)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -26,12 +29,20 @@ public class PauseMenuController : MonoBehaviour
                 pause.SetActive(true);
                 Time.timeScale = 0f;
             }
+            else
+            {
+                Resume();
+            }
         }
     }
 
     public void Resume(){
         Time.timeScale = 1f;
+        isPaused = false;
+        settingsCanvas.SetActive(false);
         pause.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Restart()

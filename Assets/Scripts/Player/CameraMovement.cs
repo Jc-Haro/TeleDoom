@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float mouseSensitivity = 500f;
+    public float sensitivityX = 500f;
+    public float sensitivityY= 500f;
     public float xRotation = 0f;
     public float yRotation = 0f;
 
@@ -21,8 +22,8 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         //We get the input from the mouse movement in both X and Y axis
-        float mouseX = InputManager.instance.Camera.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = InputManager.instance.Camera.y * mouseSensitivity * Time.deltaTime;
+        float mouseX = InputManager.instance.Camera.x * sensitivityX * Time.deltaTime;
+        float mouseY = InputManager.instance.Camera.y * sensitivityY * Time.deltaTime;
 
         //Rotation on x axis (up and down)
         xRotation -= mouseY;
