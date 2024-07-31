@@ -29,7 +29,7 @@ public class FallDamage : MonoBehaviour
             // Checks if the timer took longer than the maximum time allowed
             if (AirTime() > timeAirLimit)
             {
-                GetComponent<PlayerStats>().Healt -= damage;
+                GetComponent<PlayerStats>().Healt = damage*timerSec;
             }
             timerSec = 0;
         }

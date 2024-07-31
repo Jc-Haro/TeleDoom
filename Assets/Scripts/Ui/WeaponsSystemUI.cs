@@ -32,6 +32,7 @@ public class WeaponsSystemUI : MonoBehaviour
 
     public void MaxLifePlayer(float maxLife){
         lifePlayer.maxValue = maxLife;
+        NewLifePlayer(maxLife);
     }
 
     public void NewLifePlayer(float newLife){
@@ -40,6 +41,7 @@ public class WeaponsSystemUI : MonoBehaviour
 
     public void MaxShieldPlayer(float maxShield){
         shieldPlayer.maxValue = maxShield;
+        NewShieldPlayer(maxShield);
     }
 
     public void NewShieldPlayer(float newShield){
