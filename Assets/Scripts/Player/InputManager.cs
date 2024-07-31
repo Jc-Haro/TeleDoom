@@ -10,7 +10,8 @@ public class InputManager : MonoBehaviour
 
     //Inputs codes
     public Vector2 Movement { get; private set; }
-    public Vector2 Camera { get; private set; }
+    public float CameraX { get; private set; }
+    public float CameraY { get; private set; }
     public bool JumpMantle { get; private set; }
     public bool ShootReactivateTP { get; private set; }
     public bool Shoot { get; private set; }
@@ -19,7 +20,8 @@ public class InputManager : MonoBehaviour
 
     //Input actions
     private InputAction movement;
-    private InputAction cameraMovement;
+    private InputAction cameraMovementX;
+    private InputAction cameraMovementY;
     private InputAction jumpMante;
     private InputAction shootreactivateTP;
     private InputAction shoot;
@@ -39,7 +41,8 @@ public class InputManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         movement = playerInput.actions["Movement"];
-        cameraMovement = playerInput.actions["Camera"];
+        cameraMovementX = playerInput.actions["CameraX"];
+        cameraMovementY = playerInput.actions["CameraY"];
         jumpMante = playerInput.actions["JumpMantle"];
         shootreactivateTP = playerInput.actions["ShootReactivateTP"];
         shoot = playerInput.actions["Shoot"];
@@ -49,7 +52,8 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         Movement = movement.ReadValue<Vector2>();    
-        Camera = cameraMovement.ReadValue<Vector2>();
+        CameraX = cameraMovementX.ReadValue<float>();
+        CameraY = cameraMovementY.ReadValue<float>();
         JumpMantle = jumpMante.WasPressedThisFrame();
         ShootReactivateTP = shootreactivateTP.WasPressedThisFrame();
         Shoot = shoot.WasPressedThisFrame();

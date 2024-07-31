@@ -62,7 +62,7 @@ public class DamageGun : MonoBehaviour
 
 
                 // Create a ray from the camera position in the deviated direction
-                Ray gunRay = new Ray(bulletStartPosition.position, deviation);
+                Ray gunRay = new(bulletStartPosition.position, deviation);
                 // Draw the ray in the scene
                 Debug.DrawRay(bulletStartPosition.position, deviation * bulletRange, Color.red, 2.0f);
                 //Create trail effect 
