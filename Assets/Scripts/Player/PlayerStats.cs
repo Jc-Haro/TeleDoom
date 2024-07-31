@@ -6,9 +6,6 @@ public class PlayerStats : MonoBehaviour
     #region Singletone 
     public static PlayerStats instance;
 
-    public Animator anim;
-
-    public WeaponsSystemUI weaponsSystemUI;
     private void Awake()
     {
         if (instance == null)
@@ -30,9 +27,11 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float speed;
     float speedBooster;
     [SerializeField] float jumpForce;
-    /*
-     TODO: current weapon
-     */
+
+    public Animator anim;
+
+    public WeaponsSystemUI weaponsSystemUI;
+
     private void Start()
     {
         currentHealt = maxHealth;
@@ -53,6 +52,8 @@ public class PlayerStats : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            weaponsSystemUI.NewLifePlayer(currentHealt);
+            weaponsSystemUI.NewShieldPlayer(currentShield);
         } 
     }
     public float Shield
@@ -65,9 +66,8 @@ public class PlayerStats : MonoBehaviour
                 currentShield + value < maxShield ? currentShield + value : maxShield
                 //If its's damage
                 : ShieldDamage(value);
-            Debug.Log("Damage" + value);
-            Debug.Log("healt" + currentHealt);
-            Debug.Log("Shield" + currentShield);
+            weaponsSystemUI.NewLifePlayer(currentHealt);
+            weaponsSystemUI.NewShieldPlayer(currentShield);
         }
             
     }
@@ -87,12 +87,12 @@ public class PlayerStats : MonoBehaviour
     }
     private float ShieldDamage(float damage)
     {
-        if ((damage*-1) > currentShield)
+        if (Mathf.Abs(damage) >= currentShield)
         {
             Healt = (damage-currentShield);
             return 0;
         }
-        return damage; 
+        return currentShield + damage; 
     }
     #endregion
 }

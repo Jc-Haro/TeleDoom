@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91856fbb3c68d004485b895b9e1b8bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 6261379028783688747}
-  weaponsSystemUI: {fileID: 8448348173625426440}
   maxHealth: 100
   maxShield: 100
   speed: 0
   jumpForce: 0
+  anim: {fileID: 6261379028783688747}
+  weaponsSystemUI: {fileID: 8448348173625426440}
 --- !u!114 &4431595598213768001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13822a9fe883cf45bc90d77725bd709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
-  timeAirLimit: 1
+  damage: -5
+  timeAirLimit: 1.5
   player: {fileID: 2057472092329670922}
 --- !u!114 &8764126359120856420
 MonoBehaviour:
