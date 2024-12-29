@@ -3,19 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Map
+  - Tp
+  - EnemyBullet
+  - SniperJumpPoint
+  - Eye
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - EdgeClimbLayer
+  - Enemy
+  - Player
+  - Eye
   - 
   - 
   - 
